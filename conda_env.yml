@@ -1,0 +1,17 @@
+name: snowflake-env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12
+  - pip
+  - numpy
+  - pandas
+  - scikit-learn
+  - jupyter
+  - notebook
+  - ipykernel
+  - pip:
+    - snowflake-ml-python
+    - snowflake-connector-python
+    - snowflake-snowpark-python

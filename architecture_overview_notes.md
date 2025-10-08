@@ -38,12 +38,16 @@ Architecture Layers
 ### Resource Monitoring
 
 - *account-level monitor* - total credit consumption over all resources in account
-- *warehouse-level* - total credit consumption for a particular warehouse
-- ![](assets\20250820_192319_image.png)
-- creating warehouse-level
 
+- *warehouse-level* - total credit consumption for a particular warehouse
+
+- ![](assets\20250820_192319_image.png)
+
+- creating warehouse-level
+  
   ![](assets\20250820_192427_image.png)
--
+
+- 
 
 [resource_monitors.sql](.\resource_monitors.sql)
 
@@ -65,9 +69,11 @@ automatically generated roles
 ![](assets\20250821_164459_image.png)
 
 - SHOW GRANTS TO ROLE {name of role}
-
+  
   ![](assets\20250821_164606_image.png)
+
 - ACCOUNTADMIN has access to Security Admin Role < User Admin role
+
 - One, we learned about securable objects,   roles, privileges, and users.   Two, we learned about   the system defined roles, Org Admin,   account Admin, Security Admin,   user Admin, Sys Admin, public.   Three, we learned how to assume a role.   Four, we learned how to create a new role.   F, we learned how to grant privileges to a role.   Six, we learned how to show   what privileges a role has been granted,   and seven, we learned how to grant a role to a user.   That's a lot of stuff.   We're not quite Arbach black belts,   but we're probably at least Arbach blue belts   or something. Great job.
 
 ### Snowpark Dataframes
@@ -98,7 +104,7 @@ automatically generated roles
 - tasks - actions on scheduled basis
 - ![](assets\20250823_180134_image.png)
 - ![](assets\20250823_180526_image.png)
--
+- 
 
 #### Observability
 
@@ -139,7 +145,7 @@ automatically generated roles
 - streamlit is not a GenAI application, but cortex can be embedded
 - #### cortex
 - ![](assets\20250823_232641_image.png)
--
+- 
 
 Later, we'll see that Snowflake Cortex's ML functions operate very similarly, except that under the hood they're powered by ML models instead of by GenAI ones.
 
@@ -164,4 +170,29 @@ SPCS - Snowpark Container Services
 - snowpark has scikit-learn, xgboost library equivalents
 - ![](assets\20250824_142256_image.png)
 - SF model registry helps with model management for version artifacts and metadata
--
+- ![](assets/2025-10-08-09-41-45-image.png)
+- input day of the week -- variable neighborhood
+- "Do some neighborhoods come up more in the second half of the year?"
+  - Tree-based models
+- ![](assets/2025-10-08-09-43-59-image.png)
+- ![](assets/2025-10-08-09-45-39-image.png)
+- splitting data into training set and test set
+- don't want to train model on same data testing on; like "cheating on a test"
+- ![](assets/2025-10-08-09-48-48-image.png)
+- ![](assets/2025-10-08-09-49-11-image.png)
+
+
+
+### Snowflake Applications
+
+- application = software product to help users do a certain thing
+
+- highly sophisticated
+
+- can be integrated
+
+- ![](assets/2025-10-08-10-03-46-image.png)
+
+- establish connection, execute sql commands -- accommodates applications
+
+- 
