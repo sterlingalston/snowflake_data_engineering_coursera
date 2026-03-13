@@ -11,4 +11,14 @@
 ### Overview Part II
 
 ![image](.attachments/6eb7b9d94dc284a02ca533bf4d7c597c9a35639e.png) 
+- can host everything within snowflake
+
+  #### streamlit in snowflake
+
+  - can use it within snowflake acct
+    - front end use streamlit python
+    - logic powered by snowflake
+    - no headache with deployment
+  - snowflake native app framework
+    - users can purchase and install applications within snowflake account
 
