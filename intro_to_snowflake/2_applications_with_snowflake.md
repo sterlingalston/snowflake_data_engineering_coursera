@@ -22,3 +22,9 @@
   - snowflake native app framework
     - users can purchase and install applications within snowflake account
 
+  ### Streamlit in Snowflake - Part1
+
+[sample code](https://github.com/sterlingalston/snowflake_data_engineering_coursera/blob/master/streamlit_in_snowflake.txt)
+
+
+
