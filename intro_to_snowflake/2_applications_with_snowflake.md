@@ -26,6 +26,6 @@
 
 [sample code](https://github.com/sterlingalston/snowflake_data_engineering_coursera/blob/master/streamlit_in_snowflake.txt)
 
-<a src="https://example.com">something cool</a>
+<a url="https://example.com">something cool</a>
 
 
