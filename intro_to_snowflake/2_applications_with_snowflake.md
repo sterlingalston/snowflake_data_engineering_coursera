@@ -27,4 +27,7 @@
 [sample code](https://github.com/sterlingalston/snowflake_data_engineering_coursera/blob/master/streamlit_in_snowflake.txt)
 
 
+streamlit.io/gallery
+
+open-source framework for dynamic applications with Python
 
