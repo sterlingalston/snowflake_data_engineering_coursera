@@ -15,3 +15,5 @@ malston11
 password:
 
 (same as RI)(friday)
+
+https://uyjocpo-tdb57402.snowflakecomputing.com/console/login
