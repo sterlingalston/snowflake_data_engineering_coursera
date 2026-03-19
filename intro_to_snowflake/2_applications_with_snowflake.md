@@ -47,4 +47,5 @@ open-source framework for dynamic applications with Python
 - ![image](.attachments/3ef52bc8ecb12273813ffc37b2f7010b6bd4d1c3.png)
 - setting parameters to pass into the chart
 
+![image](.attachments/6714626658c0f983a4a011db13cc5b44654f368f.png) 
 
