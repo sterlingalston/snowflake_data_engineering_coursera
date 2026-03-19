@@ -27,7 +27,21 @@
 [sample code](https://github.com/sterlingalston/snowflake_data_engineering_coursera/blob/master/streamlit_in_snowflake.txt)
 
 
+```
 streamlit.io/gallery
+```
 
 open-source framework for dynamic applications with Python
+
+![image](.attachments/31703185887dd892cd88fac8ed115af6c1f0065a.png) 
+
+![image](.attachments/43363a92158845f8bcbbb79837779734494178e3.png) 
+- function returns sales_data pandas and sql tuple
+- ![image](.attachments/d4ce4554e816b2de3c1263e7dd136095c6230497.png)
+- st.cache_data - looks to see if you've run the function for those inputs already and if you have it'll just use the results from that
+- ![image](.attachments/63882d2f08f18cc3d670d30e622a60d9b3537d6c.png)
+- generates chart using altair library
+- 
+
+
 
