@@ -42,6 +42,9 @@ open-source framework for dynamic applications with Python
 - ![image](.attachments/63882d2f08f18cc3d670d30e622a60d9b3537d6c.png)
 - generates chart using altair library
 - 
-
+![image](.attachments/5c833fafda38e8fa907d7cea89e7d1557f55f92f.png)
+- setting parameters to pass into the function to create dataframe
+- ![image](.attachments/3ef52bc8ecb12273813ffc37b2f7010b6bd4d1c3.png)
+- setting parameters to pass into the chart
 
 
