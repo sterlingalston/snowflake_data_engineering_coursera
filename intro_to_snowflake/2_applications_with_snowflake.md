@@ -49,3 +49,5 @@ open-source framework for dynamic applications with Python
 
 ![image](.attachments/6714626658c0f983a4a011db13cc5b44654f368f.png) 
 
+https://app.snowflake.com/uyjocpo/tdb57402/#/workspaces/ws/USER%24/PUBLIC/DEFAULT%24/TASTY_BYTES_SETUP.sql
+
