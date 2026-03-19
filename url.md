@@ -1,4 +1,4 @@
-https://www.coursera.org/learn/snowflake-intro-app-developers-data-scientists-data-engineers/supplement/iDJ8Q/optional-reference-streamlit-in-snowflake-code
+https://www.coursera.org/learn/snowflake-intro-app-developers-data-scientists-data-engineers/lecture/Mcrlo/the-data-cloud
 
 resume:
 
