@@ -1,4 +1,4 @@
-https://www.coursera.org/learn/snowflake-intro-app-developers-data-scientists-data-engineers/lecture/Mcrlo/the-data-cloud
+https://www.coursera.org/learn/snowflake-intro-app-developers-data-scientists-data-engineers/lecture/RFNiK/wrap-up-of-overview-of-builder-workloads
 
 resume:
 
