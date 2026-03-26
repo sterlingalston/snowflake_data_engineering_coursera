@@ -54,8 +54,8 @@ https://app.snowflake.com/uyjocpo/tdb57402/#/workspaces/ws/USER%24/PUBLIC/DEFAUL
 ### The Data Cloud
 
 - two elements
-  - 1.snowflake's platform
-  - 2. conetn: datasets, ML
+  1. snowflake's platform
+  2. conetn: datasets, ML
 
 - ![image](.attachments/bd5072ee224fd93552d154969d331808fcda1bb4.png)
 
@@ -63,5 +63,4 @@ https://app.snowflake.com/uyjocpo/tdb57402/#/workspaces/ws/USER%24/PUBLIC/DEFAUL
 - zero within org and bridges to other orgs
 - access things in zero-copy way
 - policies copied through
-
-
+- 
