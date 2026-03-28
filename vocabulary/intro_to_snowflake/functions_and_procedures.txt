@@ -1,11 +1,18 @@
-1→UDF|User-Defined Function; a custom scalar function in Snowflake that returns a single value; written in SQL, Python, Java, or JavaScript; called within a SELECT statement. Example: SELECT max_menu_price();|function type
-2→UDTF|User-Defined Table Function; a custom function that returns a table (multiple rows and columns); invoked with TABLE(function_name(args)) in a FROM clause. Example: SELECT * FROM TABLE(menu_prices_above(15));|function type
-3→Bookends ($$)|Dollar-sign delimiters used in Snowflake UDF and stored procedure definitions to wrap the function body, allowing single quotes and special characters. Example: $$ SELECT MAX(SALE_PRICE_USD) FROM table $$|UDF syntax
-4→Python UDF|A UDF written using LANGUAGE PYTHON; requires specifying RUNTIME_VERSION (e.g., '3.11') and HANDLER matching the Python function name. Runs Python logic inside Snowflake compute.|UDF type
-5→Stored Procedure|A Snowflake routine that executes procedural logic using DECLARE/BEGIN/END blocks; supports DML; called with CALL; supported languages: SQL, JavaScript, Python, Java, Scala.|function type
-6→CALL|Executes a stored procedure and returns its result. Syntax: CALL procedure_name();|procedure command
-7→SHOW FUNCTIONS|Lists all user-defined and built-in functions visible in the current context.|DDL command
-8→SHOW PROCEDURES|Lists all stored procedures visible in the current context.|DDL command
-9→DESCRIBE PROCEDURE|Shows the definition and argument signature of a stored procedure. Syntax: DESCRIBE PROCEDURE proc_name(arg_type);|DDL command
-10→DECLARE...BEGIN...END|Procedural block syntax inside Snowflake stored procedures for declaring local variables and writing step-by-step logic. Example: DECLARE max_ts TIMESTAMP; BEGIN max_ts := (SELECT MAX(ORDER_TS) FROM table); END;|procedure syntax
-11→https://sterlingalston.github.io/snowflake_intro_to_snowflake_coursera/intro_to_snowflake/assets/20250821_143706_image.png|What Snowflake UDF is shown in this code? Identify the function name, return type, and what the $$ bookend syntax does.|UDF
+1→UDF (User-Defined Function)|A custom function in Snowflake that returns a scalar value. Supported languages: SQL, JavaScript, Python, Java, Scala. Called like a built-in function in a SELECT statement.|functions and procedures
+2→UDF BOOKENDS ($$)|The $$ delimiter used to wrap the function body in a CREATE FUNCTION statement. Also called bookends.|functions and procedures
+3→CREATE FUNCTION (SQL)|Creates a SQL UDF. Example: CREATE FUNCTION max_menu_price() RETURNS NUMBER(5,2) AS $$ SELECT MAX(SALE_PRICE_USD) FROM TASTY_BYTES.RAW_POS.MENU $$;|functions and procedures
+4→CREATE FUNCTION (Python)|Creates a Python UDF. Requires LANGUAGE PYTHON, RUNTIME_VERSION, and HANDLER. Example: CREATE FUNCTION winsorize(val NUMERIC, up_bound NUMERIC, low_bound NUMERIC) RETURNS NUMERIC LANGUAGE PYTHON RUNTIME_VERSION='3.11' HANDLER='winsorize_py' AS $$ def winsorize_py(val, up_bound, low_bound): ... $$;|functions and procedures
+5→HANDLER|The Python function name inside the UDF body that Snowflake calls when the UDF is invoked. Specified with HANDLER='function_name'.|functions and procedures
+6→UDTF (User-Defined Table Function)|A UDF that returns a table (multiple rows and columns) instead of a scalar. Supported languages: SQL, JavaScript, Python, Java (not Scala). Called inside TABLE().|functions and procedures
+7→CREATE FUNCTION ... RETURNS TABLE|Syntax for creating a UDTF. Example: CREATE FUNCTION menu_prices_above(price_floor NUMBER) RETURNS TABLE (item VARCHAR, price NUMBER) AS $$ SELECT MENU_ITEM_NAME, SALE_PRICE_USD FROM TASTY_BYTES.RAW_POS.MENU WHERE SALE_PRICE_USD > price_floor $$;|functions and procedures
+8→TABLE() INVOCATION|How to call a UDTF in a query. Example: SELECT * FROM TABLE(menu_prices_above(15));|functions and procedures
+9→SHOW FUNCTIONS|Lists all UDFs and built-in functions visible to the current role.|functions and procedures
+10→STORED PROCEDURE|A Snowflake procedure that can execute procedural logic, DML, and DDL. Unlike UDFs, procedures can commit transactions and are called with CALL. Supported languages include SQL, JavaScript, Python, Java, Scala.|functions and procedures
+11→CREATE OR REPLACE PROCEDURE|DDL to create a stored procedure. Example: CREATE OR REPLACE PROCEDURE delete_old() RETURNS BOOLEAN LANGUAGE SQL AS $$ DECLARE max_ts TIMESTAMP; BEGIN ... END; $$;|functions and procedures
+12→CALL|Executes a stored procedure. Example: CALL DELETE_OLD();|functions and procedures
+13→DECLARE (stored procedure)|Block within a SQL stored procedure for declaring local variables before the BEGIN...END block.|functions and procedures
+14→DESCRIBE PROCEDURE|Shows metadata about a stored procedure. Example: DESCRIBE PROCEDURE delete_old();|functions and procedures
+15→SHOW PROCEDURES|Lists all stored procedures visible to the current role.|functions and procedures
+16→SESSION VARIABLE|A named value set for the current session with SET. Referenced with $variable_name. Example: SET max_ts = (SELECT MAX(ORDER_TS) FROM table); SELECT $max_ts;|functions and procedures
+17→DATEADD()|Function that adds a time interval to a date/timestamp. Example: DATEADD('DAY', -180, $max_ts) returns a timestamp 180 days before max_ts.|functions and procedures
+18→https://sterlingalston.github.io/snowflake_intro_to_snowflake_coursera/intro_to_snowflake/assets/20250821_143706_image.png|What does this code snippet show — what type of Snowflake function is being created and what does it return?|functions and procedures

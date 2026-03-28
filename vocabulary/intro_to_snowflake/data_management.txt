@@ -1,25 +1,34 @@
-1→Database|Top-level organizational container in Snowflake; holds schemas which contain tables, views, stages, functions, and other objects.|core object
-2→Schema|A logical grouping of database objects (tables, views, stages, functions, etc.) within a Snowflake database.|core object
-3→SHOW DATABASES / SHOW SCHEMAS / SHOW TABLES|Snowflake commands to list all objects of a given type in the current context; SHOW TABLES supports LIKE filtering, e.g., SHOW TABLES LIKE 'TRUCK%';|DDL command
-4→DESCRIBE|Displays the column definitions and metadata for a table, view, or procedure. Example: DESCRIBE TABLE db.schema.table;|DDL command
-5→UNDROP|Restores a recently dropped database, schema, or table using Time Travel. Example: UNDROP TABLE db.schema.table;|DDL command
-6→Table|A structured Snowflake object storing rows and columns; supports data types: NUMBER, VARCHAR, BOOLEAN, DATE, VARIANT, GEOGRAPHY.|core object
-7→INSERT INTO|DML command to add rows to a Snowflake table. Example: INSERT INTO db.schema.table VALUES (28, 'ha!', True, '2024-01-01', NULL, NULL);|DML command
-8→Permanent Table|Default Snowflake table type; supports up to 90 days of Time Travel (DATA_RETENTION_TIME_IN_DAYS) and includes a Fail-safe recovery period.|table type
-9→Transient Table|Snowflake table type with no Fail-safe period and a maximum DATA_RETENTION_TIME_IN_DAYS of 1; lower storage cost, less recovery options. Syntax: CREATE TRANSIENT TABLE ...;|table type
-10→Temporary Table|Snowflake table type existing only for the current session; auto-dropped at session end; maximum DATA_RETENTION_TIME_IN_DAYS of 1. Syntax: CREATE TEMPORARY TABLE ...;|table type
-11→View|A saved SELECT query stored as a named Snowflake object; does not store data; re-executes the query at access time. Syntax: CREATE VIEW name AS SELECT ...;|core object
-12→Materialized View|A Snowflake view that pre-computes and persists query results for faster reads; auto-refreshed; requires additional storage. Syntax: CREATE MATERIALIZED VIEW name AS SELECT ...;|core object
-13→Time Travel|Snowflake feature for querying historical data using AT or BEFORE keywords; retention up to 90 days for permanent tables, 1 day for transient/temporary.|feature
-14→DATA_RETENTION_TIME_IN_DAYS|Parameter on a table, schema, or database controlling how many days of Time Travel history is retained; max 90 for permanent tables, max 1 for transient/temporary. Example: ALTER TABLE t SET DATA_RETENTION_TIME_IN_DAYS = 90;|time travel parameter
-15→AT(TIMESTAMP =>)|Time Travel syntax to query data as it existed at a specific timestamp. Example: SELECT * FROM table AT(TIMESTAMP => '2024-04-04 21:34:31.833 -0700'::TIMESTAMP_LTZ);|time travel syntax
-16→AT(OFFSET =>)|Time Travel syntax to query data as it existed N seconds ago. Example: SELECT * FROM table AT(OFFSET => -45);|time travel syntax
-17→BEFORE(STATEMENT =>)|Time Travel syntax to query data as it existed before a specific query ID ran. Example: SELECT * FROM table BEFORE(STATEMENT => $saved_query_id);|time travel syntax
-18→LAST_QUERY_ID()|Snowflake function returning the query ID of the most recently executed query in the current session; used to save a reference point for BEFORE(STATEMENT =>). Example: SET q = LAST_QUERY_ID();|function
-19→TIMESTAMPDIFF()|Snowflake function calculating the difference between two timestamps in a given unit. Example: TIMESTAMPDIFF(second, CURRENT_TIMESTAMP, $saved_timestamp)|function
-20→Zero-Copy Clone|Snowflake feature that creates an instant copy of a table, schema, or database sharing the original's micro-partitions; new storage is only created when data in the clone diverges. Syntax: CREATE TABLE clone CLONE original;|feature
-21→Clone with Time Travel|Combining cloning with Time Travel to create a copy of data as it existed at a past point. Example: CREATE TABLE clone CLONE original AT(OFFSET => -60*10);|feature
-22→VARIANT|Snowflake semi-structured data type for storing JSON, Avro, Parquet, or XML; values accessed using colon notation (col:key) or bracket notation (col['key']).|data type
-23→TYPEOF()|Snowflake function revealing the underlying data type of a value stored in a VARIANT column. Example: SELECT TYPEOF(col) FROM table;|function
-24→INFORMATION_SCHEMA|A schema present in every Snowflake database containing metadata views about objects (e.g., TABLES, TABLE_STORAGE_METRICS); accessed as db.INFORMATION_SCHEMA.view_name.|metadata
-25→ACCOUNT_USAGE.TABLE_STORAGE_METRICS|A view in the SNOWFLAKE database's ACCOUNT_USAGE schema showing storage metrics for all tables including clones. Example: SELECT * FROM SNOWFLAKE.ACCOUNT_USAGE.TABLE_STORAGE_METRICS;|metadata view
+1→DATABASE|Top-level organizational object in Snowflake. Contains schemas and all other objects. Created with: CREATE OR REPLACE DATABASE db_name; Dropped/undropped with DROP/UNDROP DATABASE.|data management
+2→SCHEMA|Logical grouping of objects (tables, views, stages, etc.) within a database. Created with: CREATE OR REPLACE SCHEMA db.schema_name; Can be dropped and undropped.|data management
+3→THREE-PART IDENTIFIER|Snowflake's fully qualified object naming convention: database.schema.object_name. Example: tasty_bytes.raw_pos.menu.|data management
+4→PERMANENT TABLE|The default Snowflake table type. Supports Time Travel up to 90 days and Fail-safe. Full storage costs apply. Created with: CREATE TABLE db.schema.table_name (...);|data management
+5→TRANSIENT TABLE|A table type with reduced storage cost. Supports Time Travel 0–1 days only; no Fail-safe. Created with: CREATE TRANSIENT TABLE db.schema.table_name ...;|data management
+6→TEMPORARY TABLE|A table that exists only for the duration of the session. Supports Time Travel 0–1 days; no Fail-safe. Created with: CREATE TEMPORARY TABLE db.schema.table_name ...;|data management
+7→VARIANT DATA TYPE|Snowflake's semi-structured data type. Stores JSON, Avro, ORC, Parquet, or XML. Column values can be queried with colon notation (col:key) or bracket notation (col['key']). Use TYPEOF() to see the underlying type.|data management
+8→COLON NOTATION|Syntax to extract a field from a VARIANT column. Example: SELECT menu_item_health_metrics_obj:menu_item_health_metrics FROM menu;|data management
+9→TYPEOF()|Snowflake function that returns the underlying data type of a VARIANT value. Example: SELECT TYPEOF(menu_item_health_metrics_obj) FROM menu;|data management
+10→VIEW|A saved SELECT query treated as a virtual table. Does not store data. Created with: CREATE VIEW db.schema.view_name AS SELECT ...; Dropped with DROP VIEW.|data management
+11→MATERIALIZED VIEW|A view whose results are physically stored and automatically maintained by Snowflake. Faster to query than regular views for repeated queries. Created with: CREATE MATERIALIZED VIEW name AS SELECT ...;|data management
+12→INFORMATION_SCHEMA|A special schema within every Snowflake database containing metadata views about objects. Example: SELECT * FROM db.INFORMATION_SCHEMA.TABLES;|data management
+13→TABLE_STORAGE_METRICS|An INFORMATION_SCHEMA view showing storage usage per table, including clones. Example: SELECT * FROM TASTY_BYTES.INFORMATION_SCHEMA.TABLE_STORAGE_METRICS;|data management
+14→ACCOUNT_USAGE.TABLE_STORAGE_METRICS|A view in the SNOWFLAKE system database showing storage metrics across the account. Example: SELECT * FROM SNOWFLAKE.ACCOUNT_USAGE.TABLE_STORAGE_METRICS;|data management
+15→TIME TRAVEL|Snowflake feature allowing you to query data as of a past point in time using AT(TIMESTAMP=>, OFFSET=>, or STATEMENT=>). Also used by UNDROP. Permanent tables support up to 90 days; transient/temporary up to 1 day.|data management
+16→AT(TIMESTAMP =>)|Time Travel syntax to query a table as it existed at a specific timestamp. Example: SELECT * FROM table AT(TIMESTAMP => '2024-04-04 21:34:31.833 -0700'::TIMESTAMP_LTZ);|data management
+17→AT(OFFSET =>)|Time Travel syntax to query a table as it existed N seconds in the past. Example: SELECT * FROM table AT(OFFSET => -45);|data management
+18→BEFORE(STATEMENT =>)|Time Travel syntax to query a table as it existed before a specific statement (by query_id) ran. Example: SELECT * FROM table BEFORE(STATEMENT => $query_id);|data management
+19→DATA_RETENTION_TIME_IN_DAYS|Table parameter controlling how long Time Travel history is kept. Max 90 for permanent tables, max 1 for transient/temporary. Example: ALTER TABLE t SET DATA_RETENTION_TIME_IN_DAYS = 90;|data management
+20→UNDROP|Restores a dropped table, schema, or database within the Time Travel retention window. Example: UNDROP TABLE db.schema.table_name;|data management
+21→LAST_QUERY_ID()|Returns the query ID of the most recently executed query in the session. Useful for capturing a reference point for BEFORE(STATEMENT =>). Example: SET qid = LAST_QUERY_ID();|data management
+22→CLONING|Zero-copy cloning creates an instant copy of a table, schema, or database without duplicating storage. New data written to the clone incurs its own storage cost. Syntax: CREATE OR REPLACE TABLE clone CLONE source;|data management
+23→CLONE WITH TIME TRAVEL|Combines cloning with Time Travel to create a table as it was at a past offset. Example: CREATE OR REPLACE TABLE truck_clone_time_travel CLONE truck AT(OFFSET => -60*10);|data management
+24→SCHEMA CLONE|Clones all tables in a schema at once. Example: CREATE OR REPLACE SCHEMA tasty_bytes.raw_pos_clone CLONE tasty_bytes.raw_pos;|data management
+25→DATABASE CLONE|Clones all schemas and tables in a database at once. Example: CREATE OR REPLACE DATABASE tasty_bytes_clone CLONE tasty_bytes;|data management
+26→SHOW TABLES|Lists all tables visible to the current role. Can be filtered: SHOW TABLES LIKE 'TRUCK%'; or scoped: SHOW TABLES IN db.schema;|data management
+27→SHOW DATABASES|Lists all databases in the account visible to the current role.|data management
+28→SHOW SCHEMAS|Lists all schemas in the current or specified database.|data management
+29→SHOW VIEWS|Lists all views in the current database/schema.|data management
+30→SHOW MATERIALIZED VIEWS|Lists all materialized views in the current database/schema.|data management
+31→DESCRIBE TABLE|Returns column names and data types for a table. Example: DESCRIBE TABLE db.schema.table_name;|data management
+32→DESCRIBE VIEW|Returns column names and data types exposed by a view. Example: DESCRIBE VIEW db.schema.view_name;|data management
+33→ARRAY_AGG()|Aggregate function that collects values into an array. Often used with DISTINCT. Example: ARRAY_AGG(DISTINCT oh.location_id) AS visited_location_ids_array.|data management
+34→COPY_HISTORY|Account usage view showing history of COPY INTO loads. Example: SELECT file_name, error_count, status, last_load_time FROM snowflake.account_usage.copy_history ORDER BY last_load_time DESC LIMIT 10;|data management
