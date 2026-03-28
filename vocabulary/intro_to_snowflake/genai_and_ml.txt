@@ -1,0 +1,32 @@
+1→SNOWFLAKE CORTEX|Snowflake's AI/ML service layer. Includes specialized LLM functions (COMPLETE, SUMMARIZE, SENTIMENT, EXTRACT_ANSWER, TRANSLATE) and ML functions (FORECAST, ANOMALY_DETECTION, TOP_INSIGHTS, CLASSIFICATION). Runs fully within Snowflake on governed data.|genai
+2→CORTEX COMPLETE|LLM function that sends a prompt to a specified model and returns a text response. Example: SELECT SNOWFLAKE.CORTEX.COMPLETE('mistral-7b', 'What are three reasons Snowflake is a top data platform?');|genai
+3→CORTEX SUMMARIZE|LLM function that summarizes a text string. Can be chained with COMPLETE. Example: SELECT SNOWFLAKE.CORTEX.SUMMARIZE(SNOWFLAKE.CORTEX.COMPLETE('mistral-7b', 'prompt'));|genai
+4→CORTEX SENTIMENT|LLM function that classifies text as Positive, Negative, or Neutral.|genai
+5→CORTEX EXTRACT_ANSWER|LLM function that extracts answers from unstructured text in a Q&A format.|genai
+6→CORTEX TRANSLATE|LLM function that translates text between languages, continuously improving with supported language pairs.|genai
+7→LLM TOKEN|The unit of text (roughly a word or word piece) that LLMs process. Costs for CORTEX.COMPLETE vary by model — larger models cost more per token. You can specify a max token limit to cap response size.|genai
+8→PROMPT HISTORY (COMPLETE)|CORTEX.COMPLETE accepts an array of message objects with roles (system, user, assistant) to maintain conversation context. Example: [{'role':'system','content':'...'}, {'role':'user','content':'...'}]|genai
+9→SYSTEM ROLE (LLM)|The message role that sets the AI's behavioral guidelines and personality for the conversation. Acts as the AI's operating instructions.|genai
+10→USER ROLE (LLM)|The message role representing the human's inputs — questions, requests, and statements in a conversation.|genai
+11→ASSISTANT ROLE (LLM)|The message role representing the AI's responses in a conversation history.|genai
+12→DOCUMENT AI|Snowflake Cortex feature that uses an LLM to extract structured data from unstructured documents (e.g., PDFs, images).|genai
+13→UNIVERSAL SEARCH|Snowflake feature that lets users search for tables, views, documentation, and data products within their Snowflake account using natural language.|genai
+14→SNOWFLAKE COPILOT|Snowflake's AI assistant that generates SQL from natural language prompts within Snowsight worksheets.|genai
+15→SPCS (Snowpark Container Services)|Snowflake service that runs containerized code within Snowflake's infrastructure. Allows bringing custom code (packaged as container images) to the data, keeping data within Snowflake's security boundary.|genai
+16→SNOWFLAKE FOR MACHINE LEARNING|Snowflake's ML platform includes: Virtual Warehouse for SQL ML functions, Snowpark ML (Python-based modeling), Snowflake Model Registry, and Snowpark Container Services for custom ML workloads.|ml
+17→CORTEX ML FUNCTIONS|No-code ML functions powered by models under the hood: FORECAST (time-series), ANOMALY_DETECTION, TOP_INSIGHTS (contribution explorer), CLASSIFICATION.|ml
+18→FORECAST (ML function)|Snowflake Cortex ML function that makes time-series predictions. No training code required.|ml
+19→ANOMALY_DETECTION (ML function)|Snowflake Cortex ML function that identifies anomalies (outliers) across time intervals in metrics.|ml
+20→TOP_INSIGHTS (ML function)|Snowflake Cortex ML function (formerly Contribution Explorer) that identifies which dimensions drive changes in a metric.|ml
+21→CLASSIFICATION (ML function)|Snowflake Cortex ML function that sorts data into different classes based on input features.|ml
+22→SNOWPARK ML|Python library for building ML models within Snowflake using scikit-learn-compatible and XGBoost-compatible APIs. Uses Snowpark DataFrames as inputs. Installed with: pip install snowflake-ml-python.|ml
+23→XGBClassifier (Snowpark ML)|XGBoost classifier available through snowflake.ml.modeling.xgboost. Trains on Snowpark DataFrames directly in Snowflake. Example: model = XGBClassifier(input_cols=FEATURE_COLS, label_cols=LABEL_COLS); model.fit(train_df)|ml
+24→LABELENCODER (Snowpark ML)|scikit-learn-compatible preprocessing transformer from snowflake.ml.modeling.preprocessing. Encodes categorical labels. Example: le = LabelEncoder(input_cols=['NEIGHBORHOOD'], output_cols=['NEIGHBORHOOD2'], drop_input_cols=True)|ml
+25→RANDOMSPLIT()|Snowpark DataFrame method to split data into training and test sets. Example: train_df, test_df = df.randomSplit([0.9, 0.1])|ml
+26→SNOWFLAKE MODEL REGISTRY|Snowflake service for managing ML model versions, artifacts, and metadata. Enables loading trained models back into Snowflake for inference.|ml
+27→TRAINING/TEST SPLIT|ML practice of dividing a labeled dataset into a training set (for fitting the model) and a test set (for evaluating accuracy). The test set must not be seen during training to get an unbiased accuracy estimate.|ml
+28→SNOWFLAKE.CORTEX.COMPLETE SYNTAX (multi-row)|COMPLETE can be applied to multiple rows at once by passing a constructed prompt string per row. Example: SELECT SNOWFLAKE.CORTEX.COMPLETE('mistral-7b', CONCAT('Tell me why this food is tasty: ', menu_item_name)) FROM menu LIMIT 5;|genai
+29→https://sterlingalston.github.io/snowflake_intro_to_snowflake_coursera/intro_to_snowflake/assets/20250823_232007_image.png|What does this Snowflake Gen AI & LLMs platform overview diagram show — name the two main service areas depicted.|genai
+30→https://sterlingalston.github.io/snowflake_intro_to_snowflake_coursera/intro_to_snowflake/assets/20250823_232641_image.png|Name the four specialized Cortex LLM functions shown in this diagram and describe what each does.|genai
+31→https://sterlingalston.github.io/snowflake_intro_to_snowflake_coursera/intro_to_snowflake/assets/20250824_141617_image.png|Name the four Snowflake Cortex ML functions shown here and describe what each one does.|ml
+32→https://sterlingalston.github.io/snowflake_intro_to_snowflake_coursera/intro_to_snowflake/assets/20250824_141405_image.png|What is shown in this Snowflake for Machine Learning overview — name the three deployment environments depicted.|ml

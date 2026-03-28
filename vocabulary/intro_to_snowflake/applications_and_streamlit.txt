@@ -1,0 +1,24 @@
+1→SNOWFLAKE CONNECTORS AND DRIVERS|A non-exhaustive list of ways to connect applications to Snowflake: Python Connector, Node.js Driver, JDBC, ODBC, .NET Driver, Go Driver, PHP PDO Driver, SQLAlchemy.|applications
+2→SNOWFLAKE PYTHON CONNECTOR|Library (snowflake-connector-python) for connecting Python applications to Snowflake. Allows executing SQL and fetching results.|applications
+3→SNOWFLAKE JDBC DRIVER|Java Database Connectivity driver for connecting Java-based applications and tools to Snowflake.|applications
+4→SNOWFLAKE ODBC DRIVER|Open Database Connectivity driver for connecting applications using ODBC standards to Snowflake.|applications
+5→DJANGO SNOWFLAKE CONNECTOR|A Django database backend that works with common Django ORM patterns, allowing Django web applications to use Snowflake as the backend database.|applications
+6→HYBRID TABLE|A Snowflake table type optimized for both transactional (row-level) and analytical workloads. Useful for web applications that need fast single-row lookups without managing a separate OLTP backend.|applications
+7→STREAMLIT|Open-source Python framework for building interactive data web applications quickly. Uses Python exclusively — no HTML/CSS/JavaScript required. Hosted at streamlit.io/gallery.|streamlit
+8→STREAMLIT IN SNOWFLAKE|Feature that lets you run Streamlit apps directly within your Snowflake account. The front end is written in Streamlit Python; the logic and data access are powered by Snowflake. No separate deployment infrastructure required.|streamlit
+9→GET_ACTIVE_SESSION()|Snowpark function that retrieves the current Snowflake session inside a Streamlit in Snowflake app. Example: from snowflake.snowpark.context import get_active_session; session = get_active_session()|streamlit
+10→ST.CACHE_DATA|Streamlit decorator that caches the output of a data-fetching function based on its inputs. On repeated calls with the same arguments, returns cached results instead of re-querying. Example: @st.cache_data|streamlit
+11→ALTAIR|Python visualization library used in Streamlit apps to create interactive charts. Example: alt.Chart(df).mark_line().encode(x='DATE', y='SUM_ORDERS', color='PRIMARY_CITY')|streamlit
+12→ST.COLUMNS()|Streamlit function that creates side-by-side column layout. Example: first_col, second_col = st.columns(2, gap="large")|streamlit
+13→ST.TABS()|Streamlit function that creates tabbed sections in an app. Example: chart_tab, dataframe_tab, query_tab = st.tabs(["Chart", "Raw Data", "SQL Query"])|streamlit
+14→ST.SELECT_SLIDER()|Streamlit widget for selecting a value or range from an ordered list. Example: start_year, end_year = st.select_slider("Select date range", options=range(2020, 2024), value=(2020, 2023))|streamlit
+15→ST.MULTISELECT()|Streamlit widget that allows users to select multiple values from a dropdown. Example: st.multiselect(label="Select cities", options=[...], default="San Mateo")|streamlit
+16→SNOWFLAKE NATIVE APP FRAMEWORK|Framework that allows developers to publish applications within the Snowflake Marketplace. Users can purchase and install apps directly within their own Snowflake account.|applications
+17→DATA CLOUD|Snowflake's ecosystem combining: (1) Snowflake's platform and (2) curated content (datasets, ML models) from the Marketplace. Eliminates data silos within and across organizations via zero-copy sharing.|data cloud
+18→ZERO-COPY SHARING|Snowflake data sharing mechanism where a provider shares access to their data with a consumer without duplicating the data. The consumer reads directly from the provider's storage.|data cloud
+19→SNOWFLAKE MARKETPLACE|A platform within the Data Cloud where providers list datasets, ML models, and native apps. Consumers can access third-party data without ETL.|data cloud
+20→SNOWFLAKE CLI|Command-line tool for managing Snowflake objects and Native App deployments. Installed with: pip install snowflake-cli-labs. Key commands: snow --help, snow app, snow connection, snow object.|applications
+21→SNOW APP (CLI)|Snowflake CLI command group for managing Native App deployments. Example: snow app --help|applications
+22→SNOW CONNECTION (CLI)|Snowflake CLI command group for managing named connection profiles stored in config.toml. Example: snow connection --help|applications
+23→CONFIG.TOML|Configuration file for the Snowflake CLI, stored in the Snowflake application support directory. Contains named connection profiles (account, user, role, warehouse, etc.).|applications
+24→https://sterlingalston.github.io/snowflake_intro_to_snowflake_coursera/intro_to_snowflake/assets/2025-10-08-10-03-46-image.png|Name at least five Snowflake drivers and connectors shown in this diagram for connecting applications to Snowflake.|applications

@@ -1,0 +1,20 @@
+1→SNOWFLAKE ARCHITECTURE|Snowflake's platform is organized into three layers: Optimized Storage, Elastic Multi-Cluster Compute (virtual warehouses), and Cloud Services — all running on top of cloud providers and connected via Snowgrid.|architecture
+2→OPTIMIZED STORAGE LAYER|The bottom layer of Snowflake's architecture. Provides un-siloed access to your data, the ability to easily manage data at scale, and flexibility and interoperability across cloud providers.|architecture
+3→ELASTIC MULTI-CLUSTER COMPUTE|Snowflake's virtual warehouse layer. Powers SQL, Python, Java, and Scala workloads. Enables multiple independent warehouses to query the same data concurrently without contention.|architecture
+4→CLOUD SERVICES LAYER|The top layer of Snowflake's architecture. Handles authentication, metadata management, query optimization, and security services. Coordinates all activity across the platform.|architecture
+5→SNOWGRID|Snowflake's cross-cloud and cross-region connectivity layer. Enables data sharing, replication, and collaboration across different Snowflake accounts and clouds.|architecture
+6→VIRTUAL WAREHOUSE|A cluster of compute resources in Snowflake used to execute queries and DML operations. Billed per second while running. Created with: CREATE OR REPLACE WAREHOUSE wh_name WAREHOUSE_SIZE='xsmall' AUTO_SUSPEND=60 AUTO_RESUME=TRUE INITIALLY_SUSPENDED=TRUE;|architecture
+7→WAREHOUSE SIZE|Controls the number of compute nodes in a virtual warehouse (XSMALL, SMALL, MEDIUM, LARGE, XLARGE, XXLARGE, XXXLARGE, X4LARGE). Larger sizes cost more credits per hour but run queries faster.|architecture
+8→AUTO_SUSPEND|Warehouse parameter (in seconds) that automatically suspends the warehouse after that period of inactivity. Helps control costs. Example: AUTO_SUSPEND = 60.|architecture
+9→AUTO_RESUME|Warehouse parameter (TRUE/FALSE) that automatically resumes a suspended warehouse when a query is submitted. Example: AUTO_RESUME = TRUE.|architecture
+10→MULTI-CLUSTER WAREHOUSE|A warehouse configured with more than one cluster to handle concurrency. Set via MAX_CLUSTER_COUNT. Example: CREATE WAREHOUSE warehouse_vino MAX_CLUSTER_COUNT = 3;|architecture
+11→EXTERNAL STAGE|A named stage pointing to an external cloud storage location (e.g., S3). Created with: CREATE OR REPLACE STAGE db.schema.stage_name url='s3://bucket/' file_format=db.schema.format;|architecture
+12→INTERNAL STAGE|A stage managed by Snowflake itself (no external cloud bucket). Three types: named stage (@stage_name), table stage (@%table), user stage (@~).|architecture
+13→TABLE STAGE|A built-in staging area for each table, referenced as @%table_name. Used to load data specifically into that table.|architecture
+14→USER STAGE|A built-in staging area for each user, referenced as @~. Personal staging area not shared with other users.|architecture
+15→FILE FORMAT|A named object that defines the format of staged data files (e.g., CSV, JSON, Parquet). Example: CREATE OR REPLACE FILE FORMAT db.public.csv_ff type='csv';|architecture
+16→LIST COMMAND|Lists files in a stage. Syntax: LIST @stage_name; or ls @stage_name;|architecture
+17→STAGE TYPE SIGILS|@ prefix refers to a named stage, @% refers to a table stage, @~ refers to a user stage.|architecture
+18→https://sterlingalston.github.io/snowflake_intro_to_snowflake_coursera/intro_to_snowflake/assets/20250817_190847_snowflake_platform_architecture.png|Name the three architectural layers of Snowflake shown in this diagram.|architecture
+19→https://sterlingalston.github.io/snowflake_intro_to_snowflake_coursera/intro_to_snowflake/assets/20250817_191307_optimized_storage_layer.png|What three benefits does the Snowflake Optimized Storage layer provide?|architecture
+20→https://sterlingalston.github.io/snowflake_intro_to_snowflake_coursera/intro_to_snowflake/assets/20250817_191526_elastic_multi-cluster_compute.png|What four capabilities does Snowflake's Elastic Multi-Cluster Compute layer enable?|architecture

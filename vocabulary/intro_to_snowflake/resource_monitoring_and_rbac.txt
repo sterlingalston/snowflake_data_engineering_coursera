@@ -1,0 +1,28 @@
+1→RESOURCE MONITOR|A Snowflake object that tracks credit usage and triggers actions (notify, suspend, suspend immediate) when usage thresholds are reached. Can be account-level or warehouse-level.|resource monitoring
+2→ACCOUNT-LEVEL RESOURCE MONITOR|Tracks total credit consumption across all resources in the account.|resource monitoring
+3→WAREHOUSE-LEVEL RESOURCE MONITOR|Tracks credit consumption for a specific virtual warehouse.|resource monitoring
+4→CREDIT_QUOTA|Resource monitor parameter defining the number of credits allowed in the monitoring period. Example: CREDIT_QUOTA = 20.|resource monitoring
+5→RESOURCE MONITOR TRIGGERS|Actions that fire at credit percentage thresholds: ON 80 PERCENT DO NOTIFY, ON 100 PERCENT DO SUSPEND, ON 110 PERCENT DO SUSPEND_IMMEDIATE.|resource monitoring
+6→SUSPEND (resource monitor)|Resource monitor action that suspends the warehouse when threshold is reached but lets currently running queries finish.|resource monitoring
+7→SUSPEND_IMMEDIATE (resource monitor)|Resource monitor action that suspends the warehouse and cancels all running queries immediately when threshold is reached.|resource monitoring
+8→CREATE RESOURCE MONITOR|DDL to create a resource monitor. Example: CREATE RESOURCE MONITOR rm_name WITH CREDIT_QUOTA=20 FREQUENCY=daily START_TIMESTAMP=immediately TRIGGERS ON 80 PERCENT DO NOTIFY ON 100 PERCENT DO SUSPEND ON 110 PERCENT DO SUSPEND_IMMEDIATE;|resource monitoring
+9→ALTER WAREHOUSE ... SET RESOURCE_MONITOR|Assigns a resource monitor to a specific warehouse. Example: ALTER WAREHOUSE tasty_de_wh SET RESOURCE_MONITOR = tasty_test_rm;|resource monitoring
+10→SHOW RESOURCE MONITORS|Lists all resource monitors in the account.|resource monitoring
+11→DROP RESOURCE MONITOR|Removes a resource monitor. Example: DROP RESOURCE MONITOR rm_name;|resource monitoring
+12→RBAC|Role-Based Access Control. Snowflake's security model where privileges are granted to roles, roles are granted to users or other roles. Objects are owned by roles.|rbac
+13→SECURABLE OBJECTS|Objects in Snowflake (databases, schemas, tables, warehouses, etc.) that can have privileges granted on them to roles.|rbac
+14→PRIVILEGE|A permission that can be granted on a securable object to a role (e.g., USAGE, SELECT, CREATE WAREHOUSE).|rbac
+15→ROLE|A named set of privileges in Snowflake. Roles are granted to users or other roles. Users assume a role to perform operations.|rbac
+16→ORGADMIN|System-defined role for managing Snowflake organization-level settings. Highest-level role.|rbac
+17→ACCOUNTADMIN|System-defined role with full control over a Snowflake account. Has access to SECURITYADMIN and SYSADMIN roles.|rbac
+18→SECURITYADMIN|System-defined role that manages grants and user/role security. Child of ACCOUNTADMIN.|rbac
+19→USERADMIN|System-defined role that can create and manage users and roles. Child of SECURITYADMIN.|rbac
+20→SYSADMIN|System-defined role that can create warehouses, databases, and other objects. Best practice for creating most objects.|rbac
+21→PUBLIC|System-defined role automatically granted to all users. Has minimal privileges by default.|rbac
+22→CREATE ROLE|DDL to create a custom role. Example: CREATE ROLE tasty_de;|rbac
+23→GRANT ROLE TO USER|Assigns a role to a user so they can assume it. Example: GRANT ROLE tasty_de TO USER username;|rbac
+24→GRANT PRIVILEGE ON ACCOUNT TO ROLE|Grants an account-level privilege to a role. Example: GRANT CREATE WAREHOUSE ON ACCOUNT TO ROLE tasty_de;|rbac
+25→USE ROLE|Switches the active role for the session. Example: USE ROLE tasty_de;|rbac
+26→SHOW GRANTS TO ROLE|Lists all privileges granted to a specific role. Example: SHOW GRANTS TO ROLE accountadmin;|rbac
+27→https://sterlingalston.github.io/snowflake_intro_to_snowflake_coursera/intro_to_snowflake/assets/20250821_164459_image.png|Name the five automatically generated (system-defined) Snowflake roles shown here.|rbac
+28→https://sterlingalston.github.io/snowflake_intro_to_snowflake_coursera/intro_to_snowflake/assets/20250820_192319_image.png|What does this Snowflake UI form show, and what are the key fields for creating a resource monitor?|resource monitoring
