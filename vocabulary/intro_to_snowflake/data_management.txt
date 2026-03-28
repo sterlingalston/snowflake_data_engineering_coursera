@@ -1,0 +1,25 @@
+1→Database|Top-level organizational container in Snowflake; holds schemas which contain tables, views, stages, functions, and other objects.|core object
+2→Schema|A logical grouping of database objects (tables, views, stages, functions, etc.) within a Snowflake database.|core object
+3→SHOW DATABASES / SHOW SCHEMAS / SHOW TABLES|Snowflake commands to list all objects of a given type in the current context; SHOW TABLES supports LIKE filtering, e.g., SHOW TABLES LIKE 'TRUCK%';|DDL command
+4→DESCRIBE|Displays the column definitions and metadata for a table, view, or procedure. Example: DESCRIBE TABLE db.schema.table;|DDL command
+5→UNDROP|Restores a recently dropped database, schema, or table using Time Travel. Example: UNDROP TABLE db.schema.table;|DDL command
+6→Table|A structured Snowflake object storing rows and columns; supports data types: NUMBER, VARCHAR, BOOLEAN, DATE, VARIANT, GEOGRAPHY.|core object
+7→INSERT INTO|DML command to add rows to a Snowflake table. Example: INSERT INTO db.schema.table VALUES (28, 'ha!', True, '2024-01-01', NULL, NULL);|DML command
+8→Permanent Table|Default Snowflake table type; supports up to 90 days of Time Travel (DATA_RETENTION_TIME_IN_DAYS) and includes a Fail-safe recovery period.|table type
+9→Transient Table|Snowflake table type with no Fail-safe period and a maximum DATA_RETENTION_TIME_IN_DAYS of 1; lower storage cost, less recovery options. Syntax: CREATE TRANSIENT TABLE ...;|table type
+10→Temporary Table|Snowflake table type existing only for the current session; auto-dropped at session end; maximum DATA_RETENTION_TIME_IN_DAYS of 1. Syntax: CREATE TEMPORARY TABLE ...;|table type
+11→View|A saved SELECT query stored as a named Snowflake object; does not store data; re-executes the query at access time. Syntax: CREATE VIEW name AS SELECT ...;|core object
+12→Materialized View|A Snowflake view that pre-computes and persists query results for faster reads; auto-refreshed; requires additional storage. Syntax: CREATE MATERIALIZED VIEW name AS SELECT ...;|core object
+13→Time Travel|Snowflake feature for querying historical data using AT or BEFORE keywords; retention up to 90 days for permanent tables, 1 day for transient/temporary.|feature
+14→DATA_RETENTION_TIME_IN_DAYS|Parameter on a table, schema, or database controlling how many days of Time Travel history is retained; max 90 for permanent tables, max 1 for transient/temporary. Example: ALTER TABLE t SET DATA_RETENTION_TIME_IN_DAYS = 90;|time travel parameter
+15→AT(TIMESTAMP =>)|Time Travel syntax to query data as it existed at a specific timestamp. Example: SELECT * FROM table AT(TIMESTAMP => '2024-04-04 21:34:31.833 -0700'::TIMESTAMP_LTZ);|time travel syntax
+16→AT(OFFSET =>)|Time Travel syntax to query data as it existed N seconds ago. Example: SELECT * FROM table AT(OFFSET => -45);|time travel syntax
+17→BEFORE(STATEMENT =>)|Time Travel syntax to query data as it existed before a specific query ID ran. Example: SELECT * FROM table BEFORE(STATEMENT => $saved_query_id);|time travel syntax
+18→LAST_QUERY_ID()|Snowflake function returning the query ID of the most recently executed query in the current session; used to save a reference point for BEFORE(STATEMENT =>). Example: SET q = LAST_QUERY_ID();|function
+19→TIMESTAMPDIFF()|Snowflake function calculating the difference between two timestamps in a given unit. Example: TIMESTAMPDIFF(second, CURRENT_TIMESTAMP, $saved_timestamp)|function
+20→Zero-Copy Clone|Snowflake feature that creates an instant copy of a table, schema, or database sharing the original's micro-partitions; new storage is only created when data in the clone diverges. Syntax: CREATE TABLE clone CLONE original;|feature
+21→Clone with Time Travel|Combining cloning with Time Travel to create a copy of data as it existed at a past point. Example: CREATE TABLE clone CLONE original AT(OFFSET => -60*10);|feature
+22→VARIANT|Snowflake semi-structured data type for storing JSON, Avro, Parquet, or XML; values accessed using colon notation (col:key) or bracket notation (col['key']).|data type
+23→TYPEOF()|Snowflake function revealing the underlying data type of a value stored in a VARIANT column. Example: SELECT TYPEOF(col) FROM table;|function
+24→INFORMATION_SCHEMA|A schema present in every Snowflake database containing metadata views about objects (e.g., TABLES, TABLE_STORAGE_METRICS); accessed as db.INFORMATION_SCHEMA.view_name.|metadata
+25→ACCOUNT_USAGE.TABLE_STORAGE_METRICS|A view in the SNOWFLAKE database's ACCOUNT_USAGE schema showing storage metrics for all tables including clones. Example: SELECT * FROM SNOWFLAKE.ACCOUNT_USAGE.TABLE_STORAGE_METRICS;|metadata view

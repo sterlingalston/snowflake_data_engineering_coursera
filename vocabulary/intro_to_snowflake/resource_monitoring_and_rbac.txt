@@ -1,0 +1,24 @@
+1→Resource Monitor|A Snowflake object that tracks credit consumption at the account or warehouse level and executes automated actions (NOTIFY, SUSPEND, SUSPEND_IMMEDIATE) when defined thresholds are reached.|cost management
+2→Account-Level Resource Monitor|A resource monitor tracking total credit consumption across all warehouses and resources in the Snowflake account.|resource monitor type
+3→Warehouse-Level Resource Monitor|A resource monitor assigned to a specific warehouse to track and cap its individual credit usage. Assigned via: ALTER WAREHOUSE wh SET RESOURCE_MONITOR = monitor_name;|resource monitor type
+4→CREDIT_QUOTA|Resource monitor parameter specifying the maximum number of credits allowed in the reset period before triggers fire. Example: CREDIT_QUOTA = 20|resource monitor parameter
+5→FREQUENCY|Resource monitor parameter defining how often the credit counter resets (DAILY, WEEKLY, MONTHLY, YEARLY, NEVER). Example: FREQUENCY = DAILY|resource monitor parameter
+6→START_TIMESTAMP|Resource monitor parameter specifying when credit tracking begins; can be IMMEDIATELY or a future timestamp. Example: START_TIMESTAMP = IMMEDIATELY|resource monitor parameter
+7→ON N PERCENT DO NOTIFY|Resource monitor trigger that sends an alert to ACCOUNTADMIN users when N% of the credit quota is consumed. Example: ON 80 PERCENT DO NOTIFY|resource monitor trigger
+8→ON N PERCENT DO SUSPEND|Resource monitor trigger that suspends the warehouse when N% of quota is reached, but allows currently running queries to finish. Example: ON 100 PERCENT DO SUSPEND|resource monitor trigger
+9→ON N PERCENT DO SUSPEND_IMMEDIATE|Resource monitor trigger that immediately suspends the warehouse and cancels all running queries when N% of quota is reached. Example: ON 110 PERCENT DO SUSPEND_IMMEDIATE|resource monitor trigger
+10→RBAC|Role-Based Access Control; Snowflake's access control model where privileges are granted to roles, and roles are granted to users; follows principle of least privilege.|security model
+11→Securable Object|Any Snowflake object (database, schema, table, warehouse, function, etc.) to which access privileges can be granted.|RBAC concept
+12→ACCOUNTADMIN|Most privileged auto-generated Snowflake role; has full access to all objects and settings; includes the capabilities of SECURITYADMIN and SYSADMIN.|system role
+13→SECURITYADMIN|Auto-generated Snowflake role responsible for managing object grants and security; can manage all users and roles; reports to ACCOUNTADMIN.|system role
+14→USERADMIN|Auto-generated Snowflake role for creating and managing users and roles; reports to SECURITYADMIN.|system role
+15→SYSADMIN|Auto-generated Snowflake role for creating and managing warehouses and databases; recommended for most data work; reports to ACCOUNTADMIN.|system role
+16→PUBLIC|Auto-generated Snowflake role automatically granted to every user; objects granted to PUBLIC are accessible to all users in the account.|system role
+17→GRANT ROLE TO USER|Assigns a role to a specific user. Syntax: GRANT ROLE role_name TO USER username;|RBAC command
+18→GRANT privilege ON object TO ROLE|Grants a privilege on a Snowflake object to a role. Example: GRANT CREATE WAREHOUSE ON ACCOUNT TO ROLE tasty_de;|RBAC command
+19→SHOW GRANTS TO ROLE|Displays all privileges that have been granted to a specific role. Syntax: SHOW GRANTS TO ROLE role_name;|RBAC command
+20→USE ROLE|Switches the active role for the current session. Syntax: USE ROLE role_name;|RBAC command
+21→https://sterlingalston.github.io/snowflake_intro_to_snowflake_coursera/intro_to_snowflake/assets/20250820_192319_image.png|What Snowflake UI form is shown here? Name each field visible when creating a new resource monitor.|resource monitor
+22→https://sterlingalston.github.io/snowflake_intro_to_snowflake_coursera/intro_to_snowflake/assets/20250820_192427_image.png|What resource monitor SQL is shown here? Identify the credit quota, frequency, start timestamp, and all three trigger actions.|resource monitor
+23→https://sterlingalston.github.io/snowflake_intro_to_snowflake_coursera/intro_to_snowflake/assets/20250821_164459_image.png|Name all five automatically-generated Snowflake roles shown in this slide.|RBAC
+24→https://sterlingalston.github.io/snowflake_intro_to_snowflake_coursera/intro_to_snowflake/assets/20250821_164600_image.png|What does this SHOW GRANTS result table show? Identify the privilege type and the objects that have been granted.|RBAC

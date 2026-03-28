@@ -1,0 +1,27 @@
+1→Snowflake Cortex|Snowflake's integrated AI layer providing LLM-powered GenAI features (COMPLETE, SUMMARIZE, SENTIMENT, EXTRACT_ANSWER, TRANSLATE) and ML functions (FORECAST, ANOMALY_DETECTION, TOP_INSIGHTS, CLASSIFICATION) on Snowflake-governed data.|AI platform
+2→CORTEX.COMPLETE()|Snowflake Cortex function that sends a prompt to an LLM and returns a text completion. Syntax: SNOWFLAKE.CORTEX.COMPLETE('model', 'prompt') or with a conversation history array for multi-turn context.|Cortex function
+3→CORTEX.SUMMARIZE()|Snowflake Cortex function that summarizes a text input; can be nested inside COMPLETE(). Syntax: SNOWFLAKE.CORTEX.SUMMARIZE(text)|Cortex function
+4→CORTEX.SENTIMENT()|Snowflake Cortex ML-powered function classifying text sentiment as Positive, Negative, or Neutral.|Cortex function
+5→CORTEX.EXTRACT_ANSWER()|Snowflake Cortex function that extracts a specific answer from an unstructured text document in Q&A format.|Cortex function
+6→CORTEX.TRANSLATE()|Snowflake Cortex function that translates text from one supported language to another.|Cortex function
+7→Token (LLM)|The basic unit of text processed by an LLM; Cortex charges are based on token count; larger models cost more per token; max_tokens can be specified to limit response length.|LLM concept
+8→Cortex Conversation Roles|When calling CORTEX.COMPLETE() with a history array: 'system' provides behavioral instructions, 'user' contains the human input, and 'assistant' contains prior LLM responses.|Cortex concept
+9→Document AI|Snowflake Cortex feature using LLMs to extract structured data from unstructured documents (e.g., invoices, PDFs); eliminates custom ETL for document parsing.|GenAI feature
+10→Universal Search|Snowflake GenAI feature allowing users to search across all Snowflake account objects (tables, views, data products, documentation) using natural language queries.|GenAI feature
+11→Snowflake Copilot|Snowflake's GenAI assistant embedded in Snowsight that generates SQL queries from natural language prompts, helping users query data without writing SQL manually.|GenAI feature
+12→SPCS|Snowpark Container Services; allows users to package code as container images that run inside Snowflake's infrastructure — bringing code to the data and keeping data within Snowflake.|GenAI/ML feature
+13→FORECAST (Cortex ML)|Snowflake Cortex ML function that makes time series forecasts without requiring custom model development.|ML function
+14→ANOMALY_DETECTION (Cortex ML)|Snowflake Cortex ML function that identifies anomalies and changes in metrics across time intervals.|ML function
+15→TOP_INSIGHTS (Cortex ML)|Snowflake Cortex ML function (Contribution Explorer) identifying the top drivers or contributors behind a metric change.|ML function
+16→CLASSIFICATION (Cortex ML)|Snowflake Cortex ML function that sorts data rows into different classes or categories.|ML function
+17→Snowpark ML|A Python library (snowflake-ml-python) providing scikit-learn and XGBoost equivalents for training ML models directly on Snowflake data via Snowpark DataFrames; install with pip install snowflake-ml-python.|ML framework
+18→XGBClassifier (Snowpark ML)|XGBoost classification model from snowflake.ml.modeling.xgboost; trained on a Snowpark DataFrame with .fit(train_df); accuracy evaluated with .score(test_df).|ML model
+19→LabelEncoder (Snowpark ML)|Preprocessing encoder from snowflake.ml.modeling.preprocessing that converts categorical labels to numeric values on Snowpark DataFrames; applied before model training.|ML preprocessing
+20→randomSplit()|Snowpark DataFrame method that splits a dataset into training and test sets by proportion. Example: train_df, test_df = df.randomSplit([0.9, 0.1])|Snowpark ML method
+21→Snowflake Model Registry|Snowflake feature for managing ML model version artifacts and metadata, enabling model governance, reproducibility, and deployment tracking across teams.|ML feature
+22→https://sterlingalston.github.io/snowflake_intro_to_snowflake_coursera/intro_to_snowflake/assets/20250823_232007_image.png|What Snowflake GenAI and LLM platform overview is shown here? Name the two core components and what they provide.|GenAI platform
+23→https://sterlingalston.github.io/snowflake_intro_to_snowflake_coursera/intro_to_snowflake/assets/20250823_232133_image.png|What Snowflake Cortex GenAI feature is shown here? What task is it performing on the document shown?|GenAI feature
+24→https://sterlingalston.github.io/snowflake_intro_to_snowflake_coursera/intro_to_snowflake/assets/20250823_232230_image.png|What Snowflake Universal Search feature is shown here? What types of objects can it search across?|GenAI feature
+25→https://sterlingalston.github.io/snowflake_intro_to_snowflake_coursera/intro_to_snowflake/assets/20250823_232310_image.png|What Snowflake Copilot feature is shown here? What is the natural language query and what SQL did it generate?|GenAI feature
+26→https://sterlingalston.github.io/snowflake_intro_to_snowflake_coursera/intro_to_snowflake/assets/20250823_232641_image.png|Name the four specialized Snowflake Cortex LLM functions shown here and briefly describe what each one does.|Cortex function
+27→https://sterlingalston.github.io/snowflake_intro_to_snowflake_coursera/intro_to_snowflake/assets/20250824_141617_image.png|Name the four Snowflake Cortex ML Functions shown here and describe what each one does.|ML function

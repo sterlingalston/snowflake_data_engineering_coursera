@@ -1,0 +1,18 @@
+1→Snowflake Connectors and Drivers|Libraries and drivers enabling applications to connect to Snowflake: Python Connector, Node.js Driver, JDBC, ODBC, PHP PDO Driver, Go Driver, .NET Driver, SQLAlchemy.|connector
+2→Python Connector|Snowflake's official Python library for connecting to Snowflake and executing SQL from Python applications. Install: pip install snowflake-connector-python|connector
+3→Django Snowflake Connector|A Snowflake connector integrating with common Django application patterns, enabling Snowflake as the backend database for Django web apps.|connector
+4→Hybrid Table|A Snowflake table type supporting both transactional (OLTP) and analytical (OLAP) workloads in web applications; avoids managing separate backend technologies.|table type
+5→Streamlit|An open-source Python framework for building interactive data applications with pure Python; no front-end development required; integrates natively with Snowflake.|application framework
+6→Streamlit in Snowflake (SiS)|Snowflake's native integration of Streamlit; deploy and run Streamlit apps entirely within a Snowflake account with no external infrastructure; front-end uses Python, logic powered by Snowflake compute.|application feature
+7→st.cache_data|Streamlit decorator that caches function return values; if the function is called again with the same inputs, Streamlit returns the cached result without re-executing the function.|Streamlit feature
+8→Altair|A Python declarative charting library (alt.Chart) used in Streamlit apps to build interactive visualizations from pandas DataFrames.|visualization library
+9→get_active_session()|Snowpark function used inside Streamlit in Snowflake to obtain the current Snowflake session context without explicit credentials. Import: from snowflake.snowpark.context import get_active_session|Snowpark method
+10→st.tabs()|Streamlit function creating tabbed views within an app. Example: chart_tab, data_tab, sql_tab = st.tabs(["Chart", "Raw Data", "SQL Query"])|Streamlit widget
+11→st.multiselect()|Streamlit widget allowing users to select multiple options from a dropdown list; used as dynamic filters in data apps.|Streamlit widget
+12→st.select_slider()|Streamlit widget creating a slider for selecting from a discrete list of values (e.g., a year range).|Streamlit widget
+13→Snowflake Native App Framework|A Snowflake platform feature enabling developers to build, package, and distribute applications that consumers can purchase and install directly within their own Snowflake account.|application feature
+14→Data Cloud|Snowflake's ecosystem combining its platform with external datasets, ML models, and data products; enables zero-copy data sharing across organizations on a single, governed platform.|ecosystem concept
+15→Zero-Copy Sharing|A Snowflake Data Cloud capability allowing data to be shared between Snowflake accounts without physically copying or moving data; governance policies follow the shared data.|data sharing
+16→Snowflake CLI (snow)|A command-line interface tool for Snowflake (pip install snowflake-cli-labs); manages Snowflake connections, apps, and objects from the terminal; configured via config.toml.|developer tool
+17→config.toml|Configuration file for the Snowflake CLI, stored in the Snowflake application support directory; holds named connection profiles for use with the snow CLI.|CLI configuration
+18→https://sterlingalston.github.io/snowflake_intro_to_snowflake_coursera/intro_to_snowflake/assets/2025-10-08-10-03-46-image.png|What Snowflake drivers and connectors are shown here? Name at least six from the list.|connector

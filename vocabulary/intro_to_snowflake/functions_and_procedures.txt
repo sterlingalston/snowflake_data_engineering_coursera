@@ -1,0 +1,11 @@
+1→UDF|User-Defined Function; a custom scalar function in Snowflake that returns a single value; written in SQL, Python, Java, or JavaScript; called within a SELECT statement. Example: SELECT max_menu_price();|function type
+2→UDTF|User-Defined Table Function; a custom function that returns a table (multiple rows and columns); invoked with TABLE(function_name(args)) in a FROM clause. Example: SELECT * FROM TABLE(menu_prices_above(15));|function type
+3→Bookends ($$)|Dollar-sign delimiters used in Snowflake UDF and stored procedure definitions to wrap the function body, allowing single quotes and special characters. Example: $$ SELECT MAX(SALE_PRICE_USD) FROM table $$|UDF syntax
+4→Python UDF|A UDF written using LANGUAGE PYTHON; requires specifying RUNTIME_VERSION (e.g., '3.11') and HANDLER matching the Python function name. Runs Python logic inside Snowflake compute.|UDF type
+5→Stored Procedure|A Snowflake routine that executes procedural logic using DECLARE/BEGIN/END blocks; supports DML; called with CALL; supported languages: SQL, JavaScript, Python, Java, Scala.|function type
+6→CALL|Executes a stored procedure and returns its result. Syntax: CALL procedure_name();|procedure command
+7→SHOW FUNCTIONS|Lists all user-defined and built-in functions visible in the current context.|DDL command
+8→SHOW PROCEDURES|Lists all stored procedures visible in the current context.|DDL command
+9→DESCRIBE PROCEDURE|Shows the definition and argument signature of a stored procedure. Syntax: DESCRIBE PROCEDURE proc_name(arg_type);|DDL command
+10→DECLARE...BEGIN...END|Procedural block syntax inside Snowflake stored procedures for declaring local variables and writing step-by-step logic. Example: DECLARE max_ts TIMESTAMP; BEGIN max_ts := (SELECT MAX(ORDER_TS) FROM table); END;|procedure syntax
+11→https://sterlingalston.github.io/snowflake_intro_to_snowflake_coursera/intro_to_snowflake/assets/20250821_143706_image.png|What Snowflake UDF is shown in this code? Identify the function name, return type, and what the $$ bookend syntax does.|UDF
