@@ -22,3 +22,13 @@
 22→SNOW CONNECTION (CLI)|Snowflake CLI command group for managing named connection profiles stored in config.toml. Example: snow connection --help|applications
 23→CONFIG.TOML|Configuration file for the Snowflake CLI, stored in the Snowflake application support directory. Contains named connection profiles (account, user, role, warehouse, etc.).|applications
 24→https://sterlingalston.github.io/snowflake_intro_to_snowflake_coursera/intro_to_snowflake/assets/2025-10-08-10-03-46-image.png|Name at least five Snowflake drivers and connectors shown in this diagram for connecting applications to Snowflake.|applications
+25→ST.TITLE()|Streamlit function that renders a large heading at the top of the app. Example: st.title(":snowflake: Tasty Bytes Streamlit App :snowflake:")|streamlit
+26→ST.WRITE()|Streamlit function that renders text, DataFrames, or other objects. Example: st.write("Tasty Bytes is a fictitious, global food truck network...")|streamlit
+27→ST.DIVIDER()|Streamlit function that renders a horizontal dividing line between sections of the app. Example: st.divider()|streamlit
+28→ST.ALTAIR_CHART()|Streamlit function that renders an Altair chart object in the app. Example: chart_tab.altair_chart(sales_fig, use_container_width=True)|streamlit
+29→ST.DATAFRAME()|Streamlit function that renders a pandas DataFrame as an interactive table. Example: dataframe_tab.dataframe(sales_data, use_container_width=True)|streamlit
+30→ST.CODE()|Streamlit function that renders a code block with syntax highlighting. Example: query_tab.code(format_sql(sales_sql), "sql")|streamlit
+31→TO_PANDAS()|Snowpark Session method that executes a SQL query and returns the results as a pandas DataFrame for use in Python/Streamlit. Example: sales_data = session.sql(sql).to_pandas()|streamlit
+32→SNOW --INFO (CLI)|Snowflake CLI command that prints version and environment information about the CLI installation. Example: snow --info|applications
+33→SNOW OBJECT (CLI)|Snowflake CLI command group for managing Snowflake objects (databases, schemas, tables, etc.) via the command line. Example: snow object --help|applications
+34→TASTY BYTES|Snowflake's fictitious global food truck network used as the demo dataset throughout this course. Includes tables: menu, truck, order_header, order_detail, location, franchise, country, customer_loyalty. Data sourced from S3 via COPY INTO.|data management

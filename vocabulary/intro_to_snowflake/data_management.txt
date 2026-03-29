@@ -32,3 +32,20 @@
 32→DESCRIBE VIEW|Returns column names and data types exposed by a view. Example: DESCRIBE VIEW db.schema.view_name;|data management
 33→ARRAY_AGG()|Aggregate function that collects values into an array. Often used with DISTINCT. Example: ARRAY_AGG(DISTINCT oh.location_id) AS visited_location_ids_array.|data management
 34→COPY_HISTORY|Account usage view showing history of COPY INTO loads. Example: SELECT file_name, error_count, status, last_load_time FROM snowflake.account_usage.copy_history ORDER BY last_load_time DESC LIMIT 10;|data management
+35→DESCRIBE DATABASE|Returns metadata about a database (owner, creation time, comment, etc.). Example: DESCRIBE DATABASE test_database;|data management
+36→INSERT INTO|DML command to add one or more rows into a table. Example: INSERT INTO db.schema.table VALUES (28, 'ha!', True, '2024-01-01', NULL, NULL);|data management
+37→NUMBER(precision, scale)|Snowflake numeric data type with optional precision and scale. Example: NUMBER(38,4) for large decimals, NUMBER(19,0) for large integers.|data management
+38→VARCHAR|Snowflake variable-length string data type. Maximum length is 16,777,216 characters. Commonly used for text columns.|data management
+39→BOOLEAN|Snowflake data type for true/false values. Example column: TEST_BOOLEAN BOOLEAN.|data management
+40→GEOGRAPHY|Snowflake geospatial data type for storing geographic coordinates and shapes. Example column: TEST_GEOGRAPHY GEOGRAPHY.|data management
+41→BRACKET NOTATION (VARIANT)|Alternative to colon notation for extracting fields from a VARIANT column using a string key. Example: SELECT menu_item_health_metrics_obj['menu_item_id'] FROM menu;|data management
+42→CAST (:: syntax)|Snowflake shorthand for casting a value to a specific type using ::. Example: '2024-04-04 21:34:31.833 -0700'::TIMESTAMP_LTZ or cost_of_goods_usd::VARIANT.|data management
+43→TIMESTAMPDIFF()|Function that returns the difference between two timestamps in a specified unit. Example: TIMESTAMPDIFF(second, CURRENT_TIMESTAMP, $good_data_timestamp).|data management
+44→SHOW VARIABLES|Lists all session variables set in the current session. Useful for confirming SET commands worked.|data management
+45→DROP VIEW|Removes a view from the schema. Example: DROP VIEW tasty_bytes.harmonized.brand_names;|data management
+46→DESCRIBE MATERIALIZED VIEW|Returns column definitions for a materialized view. Example: DESCRIBE MATERIALIZED VIEW tasty_bytes.harmonized.brand_names_materialized;|data management
+47→DROP MATERIALIZED VIEW|Removes a materialized view. Example: DROP MATERIALIZED VIEW tasty_bytes.harmonized.brand_names_materialized;|data management
+48→USE DATABASE|Sets the active database for the session so you can omit the database prefix. Example: USE DATABASE tasty_bytes;|data management
+49→USE SCHEMA|Sets the active schema for the session. Example: USE SCHEMA test_schema;|data management
+50→HARMONIZED SCHEMA|A design-layer schema in the Tasty Bytes demo that holds joined views combining raw_pos and raw_customer data. Example: tasty_bytes.harmonized.orders_v joins order_detail, order_header, truck, menu, franchise, location, and customer_loyalty.|data management
+51→ANALYTICS SCHEMA|A reporting-layer schema in the Tasty Bytes demo that exposes clean views for end users, often adding a DATE() column. Example: tasty_bytes.analytics.orders_v selects DATE(o.order_ts) AS date from the harmonized view.|data management

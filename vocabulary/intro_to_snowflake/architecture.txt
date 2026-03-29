@@ -23,3 +23,10 @@
 23→https://sterlingalston.github.io/snowflake_intro_to_snowflake_coursera/scale_horizontal.png|What Snowflake warehouse creation settings are shown here? Name all advanced options visible in this dialog (Auto Resume, Auto Suspend, Multi-cluster, Scaling Policy).|architecture
 24→https://sterlingalston.github.io/snowflake_intro_to_snowflake_coursera/scale_horizontal2.png|What does this Snowflake Warehouses list show? How many clusters is WAREHOUSE_VINO using and what is its status?|architecture
 25→https://sterlingalston.github.io/snowflake_intro_to_snowflake_coursera/stages1.png|Name and describe the three types of Snowflake stages shown in this summary (User, Table, Named).|architecture
+26→ALTER WAREHOUSE ... SET WAREHOUSE_SIZE|Changes the size of a running or suspended warehouse. Example: ALTER WAREHOUSE warehouse_dash SET WAREHOUSE_SIZE=MEDIUM;|architecture
+27→DROP WAREHOUSE|Permanently removes a virtual warehouse. Example: DROP WAREHOUSE warehouse_vino;|architecture
+28→SHOW WAREHOUSES|Lists all virtual warehouses visible to the current role, including size, status, and cluster info.|architecture
+29→INITIALLY_SUSPENDED|Warehouse creation parameter (TRUE/FALSE) that controls whether the warehouse starts in a suspended state. Best practice is TRUE to avoid immediate credit consumption. Example: INITIALLY_SUSPENDED = TRUE.|architecture
+30→WAREHOUSE_TYPE|Warehouse parameter that specifies the processing type. 'standard' is the default general-purpose type. Example: WAREHOUSE_TYPE = 'standard'.|architecture
+31→COMMENT (warehouse)|Optional metadata string attached to a warehouse at creation. Example: COMMENT = 'data engineering warehouse for tasty bytes'.|architecture
+32→https://sterlingalston.github.io/snowflake_intro_to_snowflake_coursera/scale_horizontal3.png|What warehouse configuration is shown here — what parameter is being set and what is the resulting warehouse status?|architecture
