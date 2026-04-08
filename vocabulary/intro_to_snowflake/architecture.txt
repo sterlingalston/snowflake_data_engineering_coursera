@@ -31,3 +31,4 @@
 31→COMMENT (warehouse)|Optional metadata string attached to a warehouse at creation. Example: COMMENT = 'data engineering warehouse for tasty bytes'.|architecture
 32→https://sterlingalston.github.io/snowflake_intro_to_snowflake_coursera/scale_horizontal3.png|What warehouse configuration is shown here — what parameter is being set and what is the resulting warehouse status?|architecture
 33→SNOWSIGHT|Snowflake's web-based user interface (web UI) for running SQL queries, managing objects, and accessing tutorials and worksheets. Accessed by logging in to your Snowflake account.|architecture
+34→SHOW STAGES|Lists all stages in the current schema or database. Example: SHOW STAGES;|architecture

@@ -50,3 +50,4 @@
 50→HARMONIZED SCHEMA|A design-layer schema in the Tasty Bytes demo that holds joined views combining raw_pos and raw_customer data. Example: tasty_bytes.harmonized.orders_v joins order_detail, order_header, truck, menu, franchise, location, and customer_loyalty.|data management
 51→ANALYTICS SCHEMA|A reporting-layer schema in the Tasty Bytes demo that exposes clean views for end users, often adding a DATE() column. Example: tasty_bytes.analytics.orders_v selects DATE(o.order_ts) AS date from the harmonized view.|data management
 52→SELECT TOP N|Snowflake SQL clause that returns the first N rows from a result set, equivalent to LIMIT N. Example: SELECT TOP 10 * FROM tasty_bytes_sample_data.raw_pos.menu;|data management
+53→TIMESTAMP_NTZ|Snowflake timestamp data type with no timezone. The integer in parentheses specifies fractional seconds precision (0–9). Example: order_ts TIMESTAMP_NTZ(9).|data management
