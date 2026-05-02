@@ -17,3 +17,6 @@
 
 ### You've probably done some data engineering
 
+- Ingestion, Transformation, and Delivery (ITD)
+- Example: importing .csv into excel/google sheet
+- 
