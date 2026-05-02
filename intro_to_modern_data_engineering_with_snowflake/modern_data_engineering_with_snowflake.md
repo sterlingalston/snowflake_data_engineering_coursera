@@ -1,3 +1,4 @@
 - by 2025 200 ZetaByte (200 billion TB)
 - explosion in amount of data
 - corresponding increase in demand to extract insights
+- valuable usable insights
