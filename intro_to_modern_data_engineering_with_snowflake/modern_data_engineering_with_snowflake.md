@@ -2,3 +2,6 @@
 - explosion in amount of data
 - corresponding increase in demand to extract insights
 - valuable usable insights
+
+### Modern data 
+
