@@ -3,7 +3,7 @@
 - corresponding increase in demand to extract insights
 - valuable usable insights
 
-### Modern data engineering in snowflake
+## Modern data engineering in snowflake
 
 - [Cloud Data Engineering for Dummies](https://www.snowflake.com/resource/cloud-data-engineering-for-dummies/)
 - ![image](.attachments/15039daac9cb1725cb75c37bad434cec7d3f35bb.png)
@@ -24,3 +24,21 @@
 
 - malstonsnowcert12@gmail
 - (same as ecosyst)
+- https://github.com/Snowflake-Labs/modern-data-engineering-snowflake
+- for SF acct:
+  - first initial last name
+  - pw same as bozman
+
+## Batch data ingestion with Snowflake
+
+### What is data ingestion?
+
+- 80% is getting all of the data into one platform
+- ![image](.attachments/03cdcaae60caf56fc96c654245275da728d418e1.png)
+- Challenges:
+  - scale
+  - frequency
+    - daily? real-time?
+  - sources
+    - sources are strong dictator to approach to ingestion
+  - formats 
