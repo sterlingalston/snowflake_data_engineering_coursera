@@ -19,4 +19,8 @@
 
 - Ingestion, Transformation, and Delivery (ITD)
 - Example: importing .csv into excel/google sheet
-- 
+
+### Completing the course
+
+- malstonsnowcert12@gmail
+- (same as ecosyst)
