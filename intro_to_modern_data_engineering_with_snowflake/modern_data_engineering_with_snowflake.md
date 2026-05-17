@@ -65,5 +65,11 @@
 - ![image](.attachments/535cbcf3edece4f1df14f27ad78dc13e5c46411d.png)
 - weather source = pelmorex
 - ![image](.attachments/0b0dbdca44a8129209ec9ff552bc97298a5fe4f5.png)
-- 
 
+
+### Loading data using Snowflake's web interface
+
+- using GUI (add data)
+- ![image](.attachments/fa61815cc6a51dd75fb9601d26adf73fc7a66dca.png)
+- ![image](.attachments/06a99917ff77270626799628c1503eab76332a98.png)
+- 
