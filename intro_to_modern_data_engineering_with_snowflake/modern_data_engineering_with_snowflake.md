@@ -41,4 +41,29 @@
     - daily? real-time?
   - sources
     - sources are strong dictator to approach to ingestion
-  - formats 
+  - formats
+
+### Batch ingestion with Snowflake
+
+![image](.attachments/8c1f969bf7768c3ac86a78f1d33472579bd005b5.png) 
+
+- commonly used when doing migration or large amounts
+
+  ![image](.attachments/eac9ba6a51f7df8d24099387f3886871ded7d35d.png)
+
+- streaming for financial trading or real-time monitoring
+
+![image](.attachments/6a8cad2c0dcb480938672c474de6361264133690.png) 
+
+![image](.attachments/d1561f682fd02346b1d17a9432ebe72fb5b3adb6.png) 
+
+
+### Loading data from Snowflake Marketplace
+
+- sf marketplace data completely owned by provider and it's a live dataset
+- dataset for training an ml model
+- ![image](.attachments/535cbcf3edece4f1df14f27ad78dc13e5c46411d.png)
+- weather source = pelmorex
+- ![image](.attachments/0b0dbdca44a8129209ec9ff552bc97298a5fe4f5.png)
+- 
+
