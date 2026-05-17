@@ -72,4 +72,24 @@
 - using GUI (add data)
 - ![image](.attachments/fa61815cc6a51dd75fb9601d26adf73fc7a66dca.png)
 - ![image](.attachments/06a99917ff77270626799628c1503eab76332a98.png)
-- 
+
+
+### Optimize compute resources
+
+- compute clusters (one or more nodes)
+- For now, let's simply refer to them as compute clusters. ​Compute clusters can be made up of one or more nodes. 
+
+​Each node is a virtual machine that provides a cpu, memory, and ​temporary storage to execute SQL and other operations against your data. ​A single node is able to perform multiple data operations in parallel using threads. ​
+
+![image](.attachments/ad9e55af5ffcad0ad9b029ab9ec5ab36b04bc6b7.png) 
+- warehouses T-shirt size
+- ![image](.attachments/159c4d7597e65f5badfd236520c3bc9e65db1e2e.png)
+- large the warehouse the more threads
+- ![image](.attachments/b7d524fdb1ab4e34a297e8b22f3211865df555bd.png)
+- ![image](.attachments/20616a99f84c430d9b9bf0644b827fd89293e908.png)
+- ![image](.attachments/756f8dfb7e5b315c1e29888762da6b253a154e5e.png)
+- OPTIMAL SIZE FOR A FILE 100 AND 250 MB compressed
+- ![image](.attachments/a02178a630cb9ebff5435a158dd8779abb9f54d6.png)
+- **smaller files can be processed more efficiently**
+- ![image](.attachments/ef2c581f7128c5d385d53aae37271583eb010c1a.png)
+-  
