@@ -92,4 +92,29 @@
 - ![image](.attachments/a02178a630cb9ebff5435a158dd8779abb9f54d6.png)
 - **smaller files can be processed more efficiently**
 - ![image](.attachments/ef2c581f7128c5d385d53aae37271583eb010c1a.png)
--  
+-  ![image](.attachments/73118dd5037ab885a24e592d8e983d886b1e87f3.png)
+
+
+### Loading data using Snowflake CLI
+
+- configure config.tml and connection in snowflake cli
+```
+default_connection_name = "modern_data_engineering_snowflake"
+
+[cli]
+ignore_new_version_warning = false
+
+[cli.logs]
+save_logs = true
+path = "/home/malston/.snowflake/logs"
+level = "info"
+
+[connections.modern_data_engineering_snowflake]
+account="WWOCYIE-WNB43301"
+user="malston"
+password="my(same as password)!same as RI"
+warehouse="COMPUTE_WH"
+database="LOAD_DATA"
+schema="PUBLIC"
+role="ACCOUNTADMIN"
+```
