@@ -118,3 +118,14 @@ database="LOAD_DATA"
 schema="PUBLIC"
 role="ACCOUNTADMIN"
 ```
+``` snow connection
+ 1682  snow connection add
+ 1683  snow connection test
+ 1685  cd ../snow*
+ 1687  cd modern-data-engineering-snowflake
+ 1692  snow stage create snowflake_cli_stage
+ 1693  snow connection test
+ 1694  snow stage create snowflake_cli_stage
+ 1695  snow stage copy sample_orders.csv @snowflake_cli_stage
+ 1696  history | grep -i snow```
+
