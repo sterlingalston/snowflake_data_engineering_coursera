@@ -127,5 +127,11 @@ role="ACCOUNTADMIN"
  1693  snow connection test
  1694  snow stage create snowflake_cli_stage
  1695  snow stage copy sample_orders.csv @snowflake_cli_stage
- 1696  history | grep -i snow```
+ 1696  history | grep -i snow
+```
+
+![image](.attachments/32ee994a9dbe856ab468afec76de10e90ebc37a0.png)
+```snow stage copy load_from_cli_stage.sql @snowflake_cli_stage```
+
+![image](.attachments/3661b7a1433dfdc329361802f9567809226907be.png) 
 
