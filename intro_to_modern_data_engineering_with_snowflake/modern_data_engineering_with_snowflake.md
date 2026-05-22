@@ -135,3 +135,9 @@ role="ACCOUNTADMIN"
 
 ![image](.attachments/3661b7a1433dfdc329361802f9567809226907be.png) 
 
+### COPY INTO command
+
+- copy files into table from a staged file (internal or external)
+- ![image](.attachments/a582ee81d571133f9e1df443674e3d601ecbd7ff.png)
+- 
+
