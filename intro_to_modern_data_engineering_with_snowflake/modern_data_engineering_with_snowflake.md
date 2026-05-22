@@ -139,5 +139,18 @@ role="ACCOUNTADMIN"
 
 - copy files into table from a staged file (internal or external)
 - ![image](.attachments/a582ee81d571133f9e1df443674e3d601ecbd7ff.png)
-- 
+ ```
+  
+CREATE OR REPLACE STAGE load_data.public.blob_stage
+URL = 's3://sfquickstarts/tastybytes/'
+file_format = (type = csv);
+
+LIST @load_data.public.blob_stage/raw_pos/menu/;
+
+COPY INTO load_data.public.sample_menu_copy_into
+FROM @load_data.public.blob_stage/raw_pos/menu/;
+
+DROP STAGE load_data.public.blob_stage
+
+SELECT * FROM load_data.public.sample_menu_copy_into```
 
