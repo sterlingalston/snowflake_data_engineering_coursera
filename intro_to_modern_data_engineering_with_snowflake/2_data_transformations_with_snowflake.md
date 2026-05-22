@@ -5,3 +5,7 @@
 
 ### Transformations with SQL
 
+#### snowpark
+
+![image](.attachments/72d8d41ed22e00a92c2b18c99bc404d8c485fedf.png) 
+
