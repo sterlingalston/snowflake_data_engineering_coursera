@@ -7,7 +7,7 @@ https://www.noteshub.app/notebooks/github/sterlingalston%2Fsnowflake_data_engine
 snowflake acct:
 
 malstonsnowcert12@
-
+pass:   (same as ecosyst)
 username:
 
 first initial and last name
