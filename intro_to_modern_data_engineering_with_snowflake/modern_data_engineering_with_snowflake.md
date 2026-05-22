@@ -152,5 +152,50 @@ FROM @load_data.public.blob_stage/raw_pos/menu/;
 
 DROP STAGE load_data.public.blob_stage
 
-SELECT * FROM load_data.public.sample_menu_copy_into```
+SELECT * FROM load_data.public.sample_menu_copy_into
+```
+### Snowflake data connectors
+
+![image](.attachments/535f60f255e327a7976fd24b459a1645291c920e.png) 
+![image](.attachments/a5529f2c6fc740ee791f87e0e8d6cfb773e5781c.png) 
+![image](.attachments/173df391a04a00b854a5e979f01f4ae52fd11131.png) 
+![image](.attachments/89bb806dd55e81d1eb706936f2c3cd8809a9392f.png) 
+
+In Snowflake, the number of concurrent threads a warehouse can run is determined by warehouse size, not a setting you configure directly. Here's the breakdown:
+
+**Threads per warehouse size**
+
+Each warehouse cluster has 8 cores/threads per node, and node count doubles with each size up:
+
+| Size | Nodes | Threads (cores) |
+| --- | --- | --- |
+| X-Small | 1   | 8   |
+| Small | 2   | 16  |
+| Medium | 4   | 32  |
+| Large | 8   | 64  |
+| X-Large | 16  | 128 |
+| 2X-Large | 32  | 256 |
+| 3X-Large | 64  | 512 |
+| 4X-Large | 128 | 1024 |
+| 5X-Large | 256 | 2048 |
+| 6X-Large | 512 | 4096 |
+
+Formula: `threads = 8 * 2^(size_index)` where X-Small = 0.
+
+**Concurrent queries vs threads**
+
+If you're asking about how many queries can run concurrently (which is what people usually mean by "threads" in a warehouse context), that's controlled by `MAX_CONCURRENCY_LEVEL` (default 8 per cluster). A multi-cluster warehouse multiplies this — e.g., a Medium with `MAX_CLUSTER_COUNT=3` can run up to 24 concurrent queries before queueing.
+
+Check current settings:
+
+```sql
+SHOW WAREHOUSES;
+SHOW PARAMETERS LIKE 'MAX_CONCURRENCY_LEVEL' IN WAREHOUSE my_wh;
+```
+
+**For dbt specifically**
+
+If you're tuning dbt `threads` in `profiles.yml`, the rule of thumb is to match it to roughly `MAX_CONCURRENCY_LEVEL` per cluster — going much higher just causes queueing at the warehouse, not faster runs. For most ROR-style workloads on a Medium/Large, 8-16 dbt threads is the sweet spot.
+
+Which angle were you after — sizing, dbt tuning, or query concurrency?
 
