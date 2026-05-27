@@ -75,3 +75,5 @@ DELETE FROM tasty_bytes.raw_pos.order_header WHERE order_id=123456789;
 SELECT * FROM tasty_bytes.raw_pos.order_header_stream;
 
 ```
+![image](.attachments/9dd3f2e1cc17c204743f515fa5f8bd92941fd3bc.png) 
+
