@@ -16,4 +16,4 @@ password:
 
 my(password)!(same as relief internat)
 
-https://uyjocpo-tdb57402.snowflakecomputing.com/console/login
+https://wwocyie-wnb43301.snowflakecomputing.com/console/login
