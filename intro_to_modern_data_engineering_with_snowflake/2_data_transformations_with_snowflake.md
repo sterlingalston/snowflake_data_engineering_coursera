@@ -9,3 +9,6 @@
 
 ![image](.attachments/72d8d41ed22e00a92c2b18c99bc404d8c485fedf.png) 
 
+#### Computations with user-defined functions
+
+![image](.attachments/87b11a528173c8a79f8c6b04dc0c2d9882f22e60.png) 
