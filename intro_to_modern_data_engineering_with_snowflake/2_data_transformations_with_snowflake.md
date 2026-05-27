@@ -62,3 +62,16 @@ $$
   ```
   CREATE OR REPLACE STREAM order_header_stream ON TABLE tasty_bytes.raw_pos.order_header;
   ```
+  ![image](.attachments/5db5d6653008ffd9e608bfa26c11f33608bfd199.png)
+  ![image](.attachments/4a81ba35b4ac8891a307a4094971f61079e4e65c.png)
+  - provide information about changes to the table
+
+ ```
+
+DELETE FROM tasty_bytes.raw_pos.order_header WHERE order_id=123456789;
+
+-- This won't return the deleted action in the stream because of how standard streams work
+-- See: https://docs.snowflake.com/en/user-guide/streams-intro#types-of-streams
+SELECT * FROM tasty_bytes.raw_pos.order_header_stream;
+
+```
