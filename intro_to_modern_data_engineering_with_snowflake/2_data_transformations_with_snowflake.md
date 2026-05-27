@@ -52,3 +52,13 @@ $$
 
 ;
 ```
+#### Efficient transformations with streams
+
+- keep precise track of all changes made to a table
+- ![image](.attachments/321893f5ea8094268e95bad45227829589534716.png)
+- ![image](.attachments/447a73744f3995691bc9a8860a364cb23b276003.png)
+- ![image](.attachments/ef0b3cc1204d4dea65dd06c1a84ff9b063c999c5.png)
+
+  ```
+  CREATE OR REPLACE STREAM order_header_stream ON TABLE tasty_bytes.raw_pos.order_header;
+  ```
