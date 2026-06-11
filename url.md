@@ -1,4 +1,4 @@
-https://www.coursera.org/learn/data-engineering-snowflake/lecture/uobpY/complex-procedural-logic-with-stored-procedures
+https://www.coursera.org/learn/data-engineering-snowflake/lecture/2tOqm/delivery-of-data-products
 
 resume:
 
