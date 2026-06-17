@@ -16,3 +16,6 @@
 - ![image](.attachments/d204b4390dc7011e409232c0409e5f851951573e.png)
 
 ### Streamlit in Snowflake Applications
+
+- https://github.com/Snowflake-Labs/modern-data-engineering-snowflake/tree/main/module-4/streamlit-in-snowflake
+- 
