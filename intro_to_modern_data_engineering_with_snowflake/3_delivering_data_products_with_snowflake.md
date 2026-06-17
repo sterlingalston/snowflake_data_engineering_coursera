@@ -14,4 +14,5 @@
 - ![image](.attachments/ae76d12404bc6877503c6936f90ba64de8bf084e.png)
 - ![image](.attachments/28cb384671d5acb8403120c5b14d07afa0e79875.png)
 - ![image](.attachments/d204b4390dc7011e409232c0409e5f851951573e.png)
-- 
+
+### Streamlit in Snowflake Applications
