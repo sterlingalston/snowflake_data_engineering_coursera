@@ -18,4 +18,11 @@
 ### Streamlit in Snowflake Applications
 
 - https://github.com/Snowflake-Labs/modern-data-engineering-snowflake/tree/main/module-4/streamlit-in-snowflake
+
+### Snowflake Native Applications
+
+- ![image](.attachments/3e9fdfe5ff41474915a29359c246a90603ed1e36.png)
+- snowflake container services to run container images within app instead
+- ![image](.attachments/893a9f3ca18c3a7c47960935798520f1eda66d9a.png)
+- ![image](.attachments/abc4cc3e9ef8d8b46f72bae7943f27d1e7d7ba1b.png)
 - 
