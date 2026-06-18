@@ -10,7 +10,7 @@
 
 ![image](.attachments/47dd9d318e6799c483b9d40a6a1329de56d44b8d.png) 
 - user manged tasks assigns compute resources
-- serverless does this for you
+- serverless does this for you -- it manages compute resources
 - one-line code change
 - scheduled with cron expression
 - specifying **WAREHOUSE = {...} ** is for a user managed task; omitting this will make this a serverless task
