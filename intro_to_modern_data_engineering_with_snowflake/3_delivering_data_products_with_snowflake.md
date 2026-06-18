@@ -30,4 +30,3 @@
 - ![image](.attachments/6b7f8a63ea549bb65b8b358fc96ef50abc464818.png)
 - streamlit are only within account
 - native apps can be listed in market place and consumers an run within their own accounts
-- 
