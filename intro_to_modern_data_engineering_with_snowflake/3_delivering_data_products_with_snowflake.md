@@ -25,4 +25,9 @@
 - snowflake container services to run container images within app instead
 - ![image](.attachments/893a9f3ca18c3a7c47960935798520f1eda66d9a.png)
 - ![image](.attachments/abc4cc3e9ef8d8b46f72bae7943f27d1e7d7ba1b.png)
+- ![image](.attachments/513b5f15ac1490c482a2cde34ba83d2665e4a012.png)
+- ![image](.attachments/ca262611f7ab13ecca1fd3cff9f1a7a84d564fc1.png)
+- ![image](.attachments/6b7f8a63ea549bb65b8b358fc96ef50abc464818.png)
+- streamlit are only within account
+- native apps can be listed in market place and consumers an run within their own accounts
 - 
