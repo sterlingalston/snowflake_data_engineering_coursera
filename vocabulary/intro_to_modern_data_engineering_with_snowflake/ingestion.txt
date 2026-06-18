@@ -1,0 +1,10 @@
+1→DATA INGESTION|The process of collecting and importing data into Snowflake for storage and analysis. Represents ~80% of data engineering work. Key challenges: scale, frequency, sources, and formats.|ingestion
+2→BATCH INGESTION|Loading large volumes of data at scheduled intervals. Commonly used for migrations or bulk historical loads. Tools: COPY INTO, Snowflake CLI, connectors.|ingestion
+3→STREAMING INGESTION|Loading data continuously in near-real-time. Used for financial trading, real-time monitoring, and event-driven pipelines. Contrast with batch ingestion.|ingestion
+4→COPY INTO|Snowflake command that loads staged files into a table. Syntax: COPY INTO db.schema.table FROM @stage_name; Works with both internal and external stages.|ingestion
+5→SNOWFLAKE MARKETPLACE|A platform where providers share live datasets with consumers. Data is owned and managed by the provider; consumers access it without copying. Used for third-party data like weather, financial, or demographic datasets.|ingestion
+6→SNOWFLAKE CLI (snow)|Command-line interface for Snowflake. Used to manage connections, stages, and data loading. Key commands: snow connection add, snow connection test, snow stage create, snow stage copy.|ingestion
+7→OPTIMAL FILE SIZE FOR LOADING|Files between 100 MB and 250 MB compressed are optimal for Snowflake ingestion. Smaller files can be processed more efficiently in parallel across warehouse threads.|ingestion
+8→SNOWFLAKE DATA CONNECTORS|Native integrations for loading data into Snowflake from external systems. Includes Kafka Connector, Spark Connector, Python Connector, JDBC/ODBC drivers, and partner integrations.|ingestion
+9→WAREHOUSE THREADS|Each warehouse node has 8 cores/threads. Thread count doubles with each size: XSmall=8, Small=16, Medium=32, Large=64, XLarge=128. Controls parallelism for data loading and query execution.|ingestion
+10→MAX_CONCURRENCY_LEVEL|Warehouse parameter controlling max concurrent queries per cluster (default: 8). A multi-cluster warehouse multiplies this — e.g., Medium with MAX_CLUSTER_COUNT=3 handles up to 24 concurrent queries.|ingestion

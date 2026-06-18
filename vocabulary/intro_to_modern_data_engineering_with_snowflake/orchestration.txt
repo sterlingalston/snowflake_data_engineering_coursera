@@ -1,0 +1,7 @@
+1→ORCHESTRATION|Automation at scale — coordinating the sequence, scheduling, and dependencies of data pipeline steps. In Snowflake, orchestration is primarily done with Tasks and DAGs.|orchestration
+2→TASK|A Snowflake object that executes a SQL statement or stored procedure on a schedule or as part of a DAG. Created with: CREATE OR REPLACE TASK task_name SCHEDULE = 'USING CRON ...' AS <sql>;|orchestration
+3→USER-MANAGED TASK|A task that uses a specified virtual warehouse for compute. Configured by setting WAREHOUSE = warehouse_name in the task definition. You control and pay for the warehouse.|orchestration
+4→SERVERLESS TASK|A task where Snowflake automatically manages and scales compute resources. Omit the WAREHOUSE parameter in the task definition. One-line change from user-managed.|orchestration
+5→CRON EXPRESSION|A schedule string used in Snowflake tasks to define when a task runs. Example: '5 * * * * America/Los_Angeles' = every hour at minute 5, Pacific time.|orchestration
+6→DAG (Directed Acyclic Graph)|A graph of tasks where each node is a task and edges define dependencies. Tasks run in order based on dependencies. Snowflake supports DAGs natively via task predecessor chaining.|orchestration
+7→DYNAMIC TABLE (orchestration)|A table that automatically refreshes based on its query definition and a target lag setting. Simplifies orchestration by eliminating the need to manually wire streams and tasks for incremental refresh pipelines.|orchestration

@@ -1,0 +1,8 @@
+1→DATA TRANSFORMATION|The process of converting raw ingested data into a structured, clean, and enriched form suitable for analysis or downstream use. The T in ETL/ELT.|transformations
+2→SNOWPARK|Snowflake's developer framework for running Python, Java, and Scala code directly inside Snowflake's compute engine. Enables DataFrame-style transformations without moving data out of Snowflake.|transformations
+3→USER-DEFINED FUNCTION (UDF)|A custom function created in SQL, Python, Java, or JavaScript that extends Snowflake's built-in functions. Example: CREATE OR REPLACE FUNCTION fahrenheit_to_celsius(temp_f NUMBER(35,4)) RETURNS NUMBER(35,4) AS $$ (temp_f - 32) * (5/9) $$;|transformations
+4→STREAM|A Snowflake object that tracks row-level changes (INSERT, UPDATE, DELETE) to a table since the last time the stream was consumed. Created with: CREATE OR REPLACE STREAM stream_name ON TABLE table_name;|transformations
+5→STREAM OFFSET|The position marker in a stream that tracks which changes have been consumed. Querying a stream does NOT advance the offset — only consuming it in a DML transaction does.|transformations
+6→STREAM CONSUMPTION|Using stream contents inside a DML transaction (INSERT, UPDATE, MERGE). This advances the stream offset. Simply querying the stream does not consume it.|transformations
+7→DYNAMIC TABLE|A Snowflake table that automatically refreshes based on a SQL query definition and a target lag. Simplifies pipeline automation without writing explicit task/stream logic.|transformations
+8→STORED PROCEDURE|A named block of procedural logic (JavaScript, Python, Snowflake Scripting) stored in Snowflake and called with CALL. Used for complex multi-step transformations and control flow.|transformations
