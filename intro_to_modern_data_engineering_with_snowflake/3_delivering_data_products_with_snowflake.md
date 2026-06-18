@@ -35,19 +35,19 @@
 
 Here are some resources I recommend to learn even more about data product delivery with Snowflake:
 
-### **Secure data sharing**
+ **Secure data sharing**
 
 -   [Introduction to Secure Data Sharing | Snowflake Documentation](https://docs.snowflake.com/en/user-guide/data-sharing-intro) – A strong overview of secure data sharing in Snowflake. The "Data Sharing & Collaboration" parent section also contains more detail about other aspects of data sharing.
     
 
-### **Streamlit in Snowflake**
+ **Streamlit in Snowflake**
 
 -   [Live — Under the Hood: Streamlit in Snowflake](https://www.youtube.com/watch?v=kfrPyZySWqI) – An interview and demo with the product manager that helps build Streamlit in Snowflake.
     
 -   [Streamlit in Snowflake: Build Data and AI Apps on the Data Cloud with Python](https://www.snowflake.com/blog/building-python-data-apps-streamlit/) – Blog post from the product manager that helps build Streamlit in Snowflake.
     
 
-### **Snowflake Native Applications**
+ **Snowflake Native Applications**
 
 -   [Snowflake Native App Framework](https://youtu.be/IrKgLGOsUsc) – An overview of the Snowflake Native App framework by the product manager that helps build the framework.
     
@@ -56,7 +56,7 @@ Here are some resources I recommend to learn even more about data product delive
 -   [Snowflake Native Apps: A New Way to Put Data to Work | by Frédéric L'Anglais](https://medium.com/snowflake/snowflake-native-apps-a-new-way-to-put-data-to-work-8d01816701db) – A great overview of the benefits of Snowflake Native Apps and the types of applications that can be built.
     
 
-### **Snowflake Developer Ecosystem**
+**Snowflake Developer Ecosystem**
 
 These concepts were not covered in this specific course (but will be in a future course), but if you're interested in learning more about how to build applications with Snowflake, consider the following resources:
 
