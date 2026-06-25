@@ -1,4 +1,4 @@
-https://www.coursera.org/learn/advanced-data-engineering-with-snowflake/lecture/4lBAI/scaling-data-pipelines-to-meet-modern-demands
+https://www.coursera.org/learn/advanced-data-engineering-with-snowflake/lecture/G2OuA/what-this-course-will-cover
 
 resume:
 
