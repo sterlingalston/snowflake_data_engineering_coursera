@@ -217,21 +217,15 @@ AS
 
 CALL tasty_bytes.raw_pos.last_seven_days_report();
 
-  
-
 -- Start the tasks
 
 ALTER TASK tasty_bytes.raw_pos.send_last_seven_days_report RESUME;
 
 ALTER TASK tasty_bytes.raw_pos.process_orders_header_sproc RESUME;
 
-  
-
 -- Start the DAG
 
 EXECUTE TASK tasty_bytes.raw_pos.process_orders_header_sproc;
-
-  
 
 -- Stop the tasks
 
@@ -241,4 +235,8 @@ ALTER TASK tasty_bytes.raw_pos.send_last_seven_days_report SUSPEND;
 ```
 
 - ![image](.attachments/34e47c4920df388008beedcce1e6167579927b70.png)
-- 
+
+- ![image](.attachments/07d8d71891f2de13c21561fee5d3ce4550be8e35.png)
+
+### Further learning
+
