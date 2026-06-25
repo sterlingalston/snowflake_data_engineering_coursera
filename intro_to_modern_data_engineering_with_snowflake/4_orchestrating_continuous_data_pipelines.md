@@ -240,3 +240,25 @@ ALTER TASK tasty_bytes.raw_pos.send_last_seven_days_report SUSPEND;
 
 ### Further learning
 
+-   [Introduction to tasks | Snowflake Documentation](https://docs.snowflake.com/en/user-guide/tasks-intro) – A great resource on many different aspects of Snowflake tasks. Consider the section "Triggered Tasks", which outlines new capabilities for tasks.
+    
+-   [The definitive guide to using Snowflake Tasks](https://select.dev/posts/snowflake-tasks) – Another great resource written by a Snowflake Data Superhero.
+    
+-   [Managing Snowflake tasks and task graphs with Python](https://docs.snowflake.com/en/developer-guide/snowflake-python-api/snowflake-python-managing-tasks) – How to use the Snowflake Python APIs to programmatically manage tasks.
+
+I mention this in the course, but the best way to learn even more about how to build data pipelines with Snowflake is by getting hands-on with Snowflake and applying the concepts you learned in this course. To that end, here's a list of resources that offer plenty of opportunities for you to get hands-on:
+
+-   [Snowflake Quickstarts](https://quickstarts.snowflake.com/) – Step-by-step, hands-on guides on all sorts of different technical topics and aspects of Snowflake.
+    
+-   [Snowflake Developers - YouTube](https://www.youtube.com/channel/UCxgY7r-o_ql8ADIdyiQr3Zw) – Technical videos about Snowflake that range from demos, webinars, follow-alongs, interviews, and much more. Be sure to like and subscribe!
+    
+-   [Snowflake Builders Blog: Data Engineers, App Developers, AI/ML, & Data Science](https://medium.com/snowflake) – Snowflake's official Medium publication, complete with 100s of technical articles on all sorts of topics related to Snowflake.
+    
+-   [Snowflake Labs · GitHub](https://github.com/Snowflake-Labs) – Snowflake's official open source GitHub organization, with 100s of repositories that include sample code, tools, snippets, guides, and much more.
+    
+-   [Snowflake Solutions Center](https://developers.snowflake.com/solutions/) – Technical reference architectures, industry specific use-cases, solutions, and best practices from Snowflake experts and partners.
+    
+-   [Snowflake Community Forums](https://snowflake.discourse.group/) – Snowflake's official community forums with 1000 of users and discussions on technical topics. 
+    
+
+Have fun building with Snowflake!
