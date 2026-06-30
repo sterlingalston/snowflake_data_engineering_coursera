@@ -12,4 +12,5 @@
 - snowflake git integration with platform (github)
 - ![image](.attachments/f3a1bbe5bc22cecd0fe8ba232a84f8cd208e98b1.png)
 - ![image](.attachments/b909b4292010a824b1baac652487e50243699c28.png)
+- https://github.com/Snowflake-Labs/advanced-data-engineering-snowflake
 - 
