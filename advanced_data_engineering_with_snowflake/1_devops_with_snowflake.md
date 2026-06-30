@@ -9,10 +9,18 @@
 
 ### DevOps with Snowflake
 
+#### source control within git
+
 - snowflake git integration with platform (github)
 - ![image](.attachments/f3a1bbe5bc22cecd0fe8ba232a84f8cd208e98b1.png)
 - ![image](.attachments/b909b4292010a824b1baac652487e50243699c28.png)
 - https://github.com/Snowflake-Labs/advanced-data-engineering-snowflake
 - ![image](.attachments/a85f582da763de1b3d7cb38d3861c33cdfbc4968.png)
 - ![image](.attachments/5c79774a9fdb33223d5dba829aecc46521f4d82d.png)
-- ![image](.attachments/3a95c0b60b4c2d2fa2eba93bbc81abe9a9c77977.png) 
+- ![image](.attachments/3a95c0b60b4c2d2fa2eba93bbc81abe9a9c77977.png)
+- ```sql
+  SHOW GIT REPOSITORIES
+  ```
+- ![image](.attachments/d6a5db6bdfcd0cce8df9e95501feeb8773454c04.png)
+- ![image](.attachments/81c21360dc9a41d13c6049400aa17764f8bc3073.png)
+
