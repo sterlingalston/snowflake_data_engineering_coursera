@@ -14,4 +14,5 @@
 - ![image](.attachments/b909b4292010a824b1baac652487e50243699c28.png)
 - https://github.com/Snowflake-Labs/advanced-data-engineering-snowflake
 - ![image](.attachments/a85f582da763de1b3d7cb38d3861c33cdfbc4968.png)
-- ![image](.attachments/5c79774a9fdb33223d5dba829aecc46521f4d82d.png) 
+- ![image](.attachments/5c79774a9fdb33223d5dba829aecc46521f4d82d.png)
+- ![image](.attachments/3a95c0b60b4c2d2fa2eba93bbc81abe9a9c77977.png) 
