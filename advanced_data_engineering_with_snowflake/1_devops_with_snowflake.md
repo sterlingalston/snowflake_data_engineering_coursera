@@ -93,4 +93,25 @@ ma=PUBLIC```
 - ![image](.attachments/0d7f6c43c07b18d26148353b6c07f29b8a9adbf5.png)
 - CPU, latency distribution,
 -  ​This is because metrics provide great information ​for identifying system-wide issues. ​Traces provide support in identifying ​which step in a chain is causing the issue. ​And logs provide support for detailed debugging ​and in root cause analyses. ​
--  
+-  event tables, alerts, notifications
+-  ![image](.attachments/b93c6258412aa4c96fdc88930073713e20123241.png)
+-  ![image](.attachments/224c54a79b1ae3e3741ab3fd18afe0e0ef08163d.png)
+-  ![image](.attachments/7e58182d5b3440b3fe5fd2c817c13097f290f4b2.png)
+-  ![image](.attachments/5a15c0ceee938f490bbda4a3d97ff159442a9275.png)
+-  part from its ease of use, my favorite thing about Snowflake Trail is that it's built on ​the OpenTelemetry standard. ​If you're not familiar with it, the OpenTelemetry standard is a vendor-neutral, open-source ​standard that defines a consistent way to capture telemetry like logs, traces, and metrics. ​This means that if you've worked with telemetry in other platforms that follow this standard, ​then your experience with Snowflake Trail will be familiar and seamless. ​So
+
+##### event tables
+
+- core foundational object for telemetry
+- logs and traces for code in environment
+- ![image](.attachments/e65cc33344e6e72f0718a3973b5fa209f8e9e6f4.png)
+- **Open Telemetry Standards**
+- ![image](.attachments/63a7774fdabf03269e06f310b15b6c9583393baf.png)
+- lives inside telemetry schema
+- ![image](.attachments/7e2aa63efed99beec7927b807e72d4a7fb3f2760.png)
+- ![image](.attachments/3dafd482fa73946b09b6cf98d8e4a3a05018125c.png)
+- ![image](.attachments/7fc4b34fa4058e49ff78754b9c7e04e803486d1b.png)
+- creates custom event table
+- ![image](.attachments/a9669968e5e1b9e86968bb4bdd19c4fe9e760825.png)
+- sets this is preferred event table in account
+- 
