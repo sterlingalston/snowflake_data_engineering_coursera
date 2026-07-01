@@ -53,4 +53,13 @@ ma=PUBLIC```
 - ```sql
   CREATE OR ALTER
   ```
+- Create or alter allows you to create an object if it doesn't exist, ​or modify it in place by applying only new changes to that object without dropping the object. ​It's pretty neat, right?
+- means we can use declarative approach
+- ![image](.attachments/c406cc8f164f46f9a4cca3df473ccaf84089ae5e.png)
+- if need to change definition of object make changes there
+- ![image](.attachments/efb1657bf03b24da2894c9fa08ba90667c875d43.png)
+- snowflake recognizes new changes
+- associations on object stay intact
+- Now, be careful using this command. ​It's so powerful that you can also introduce changes like removing object properties, ​which could affect data. ​For example, if a modification to a create or alter table statement calls for dropping a column, ​any data that was in that column will also be dropped. ​You can, of course, recover that data using Snowflake's time travel feature, ​but I call this out to help you be mindful when wielding this powerful statement. ​A
+
 - 
