@@ -75,4 +75,4 @@ ma=PUBLIC```
   - ![image](.attachments/fad1312b599b850db46878cc39a01d8297d3e29c.png)
   - ![image](.attachments/114cd2bf968fc1a6cc9c49a0e2c24e46ace9373e.png)
   - teams will have different environments (STG and PROD)
-  - 
+  - ![image](.attachments/ddfb5e0991049ca054e92e47bd03567a428bbf3a.png) 
