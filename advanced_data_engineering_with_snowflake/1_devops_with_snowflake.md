@@ -65,3 +65,7 @@ ma=PUBLIC```
 - ![image](.attachments/23da22b72eb8dfd41e6374a641c2c730f16f2400.png)
 - ![image](.attachments/6f990cc9dc2547db6162a834f02b2b44b344e198.png)
 - create notebook from branch
+- ```bash
+  git fetch
+  git add -p
+  ```
