@@ -114,4 +114,24 @@ ma=PUBLIC```
 - creates custom event table
 - ![image](.attachments/a9669968e5e1b9e86968bb4bdd19c4fe9e760825.png)
 - sets this is preferred event table in account
+
+##### capture logs in event table
+
+- 5 log levels
+- ![image](.attachments/cf5c5939f242ac5fe41cee2bbad1ada6c0e03d08.png)
+- ![image](.attachments/a36a7b9c31e9ea1ba0377d06b6326462d4ff26a2.png)
+- ![image](.attachments/eabd0a74d4e8eb5c18716c48a0382b39398b8d05.png)
+- https://github.com/Snowflake-Labs/advanced-data-engineering-snowflake/blob/main/module-2/sproc.sql
+- ![image](.attachments/d4f58929e7cea442434e5f36496813c0769b6d22.png)
+- ![image](.attachments/5b715aa871fe2060461892fe344182c17ea07518.png)
+- additional code in repo
+- ![image](.attachments/940198095f292a96b94690c944a08c7175f9f6b7.png)
+- And finally, always understand what you're generating logs for ​and what information is being captured. ​You could run the risk of accidentally logging sensitive information ​in an event table. 
+​If you're worried about this, ​you could consider applying row access policies to the event table ​to restrict access to rows containing PII. ​You could also consider creating a view on top of the event table ​and applying a masking policy. ​There are several ways to go about this, ​and your approach will depend on your use case. ​Okay, you have logs covered. ​Join me in the next video to learn how to capture tr
+
+##### traces in snowflake
+- how events in system occurred
+- logs based on description that you write
+- module-2/solutions/solution_sproc_traces.sql
+- record entire journey of request as it moves through system
 - 
