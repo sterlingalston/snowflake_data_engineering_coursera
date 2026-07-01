@@ -62,4 +62,6 @@ ma=PUBLIC```
 - associations on object stay intact
 - Now, be careful using this command. ​It's so powerful that you can also introduce changes like removing object properties, ​which could affect data. ​For example, if a modification to a create or alter table statement calls for dropping a column, ​any data that was in that column will also be dropped. ​You can, of course, recover that data using Snowflake's time travel feature, ​but I call this out to help you be mindful when wielding this powerful statement. ​A
 
-- 
+- ![image](.attachments/23da22b72eb8dfd41e6374a641c2c730f16f2400.png)
+- ![image](.attachments/6f990cc9dc2547db6162a834f02b2b44b344e198.png)
+- create notebook from branch
