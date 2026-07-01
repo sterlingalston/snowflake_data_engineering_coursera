@@ -135,4 +135,30 @@ ma=PUBLIC```
 - module-2/solutions/solution_sproc_traces.sql
 - record entire journey of request as it moves through system
 - includes timing and dependency
-- 
+- e. ​Traces are made up of three core components, ​spans, trace events, and attributes. ​You can think of a span as the basic unit of work in a trace. ​It represents a single operation in a trace ​and has a parent-child relationship with other spans. ​Nested within spans are trace events. ​Yes, I know, we're really going down the rabbit hole now. ​Trace events are discrete events that occur within a span.
+- nested within spans are traces -- provides more context
+- ![image](.attachments/a507a8fefb9440b047a9a9b88b610be451b689bb.png)
+- /home/malston/snowflake_data_engineering(coursera)/advanced-data-engineering-snowflake/module-2/solutions/solution_sproc_traces.sql
+- ![image](.attachments/4f12b66858b5e43eabcb9b4adbde37fe7084b15b.png)
+- uuid helps trace telemetry to specifc run of stored procedure
+- ![image](.attachments/fd8eb208c67db169ec88de875b941e8d7abf9237.png) ![image](.attachments/be50c548560c4c6f5e0c9e23bed045b289008210.png)
+- ```text
+  You're right to push back — let me be more precise, because I conflated two things.
+
+**The Python `logging` module itself is not Snowflake-aware at all.** `logging.getLogger('order_headers_stream_sproc')` and `logger.info(...)` are just standard library calls that, on their own, would write to stdout/stderr or wherever Python's default handlers point — nothing about that is Snowflake-specific, and by itself it wouldn't land in an event table.
+
+What actually bridges that gap is **Snowflake's runtime instrumentation for stored procedures**. When a Python stored procedure executes inside Snowflake, the execution environment installs its own logging handler at import/setup time that intercepts records passed through the standard `logging` module and forwards them into the event table pipeline — _provided_ `LOG_LEVEL` is set high enough to capture them. This is Snowflake-specific behavior injected into the sandboxed runtime, not a feature of the `logging` library itself.
+
+So to correct my earlier framing:
+
+-   **`logging` module** → generic Python, no Snowflake awareness, would go nowhere useful on its own.
+-   **Snowflake's sproc execution environment** → wraps/patches the logging system so records get captured and routed, but only if `LOG_LEVEL` is configured and an event table is bound.
+-   **`snowflake.telemetry` package** (`snowflake-telemetry-python`) → this one _is_ explicitly Snowflake-aware — `set_span_attribute`, `add_event` are SDK calls that talk directly to Snowflake's tracing infrastructure, not intercepted after the fact.
+
+So the two mechanisms in your script are different:
+
+1.  `logger.info(...)` — captured via Snowflake's runtime-level interception of the standard logging module (dependent on `LOG_LEVEL`)
+2.  `telemetry.add_event(...)` / `telemetry.set_span_attribute(...)` — captured via a purpose-built Snowflake SDK (dependent on `TRACE_LEVEL`)
+
+Both ultimately land in the same event table, but by different plumbing. Good catch — worth knowing which one you're relying on if something isn't showing up as expected.
+```
