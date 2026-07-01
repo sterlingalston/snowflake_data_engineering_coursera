@@ -69,3 +69,9 @@ ma=PUBLIC```
   git fetch
   git add -p
   ```
+
+  #### continuous integration and continuous delivery (CI/CD)
+
+  - ![image](.attachments/fad1312b599b850db46878cc39a01d8297d3e29c.png)
+  
+  
