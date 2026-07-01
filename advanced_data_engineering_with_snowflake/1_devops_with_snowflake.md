@@ -80,4 +80,15 @@ ma=PUBLIC```
   - ![image](.attachments/9c81d78e16c1139579aeae4308b0933e64f79cd8.png)
   - ![image](.attachments/603a6b44e1b7254f87953c64fc2c506cf442c754.png)
   - ![image](.attachments/4a1719daf2468d0ceb57647c5e593491279559ab.png)
-  - 
+
+#### observability
+
+- ![image](.attachments/a1081ba561bc32faa4141b32dc3064e5c2768241.png)
+- ![image](.attachments/e16bc26cb9bf18e845ec854a007c8d95dc3966e6.png)
+- ![image](.attachments/9752feea4ae7c53e298073c61f8ccb7cfaad8b47.png)
+- pillars: 1)logs, 2) traces, and 3) metrics
+- ![image](.attachments/15c4a085dd3de64ec491f4c85327c4d5cc55cb00.png)
+- ![image](.attachments/6053b3c2fc6dd1ac770299c56d3cf71434788812.png)
+- traces chained together in time series fashion
+- ![image](.attachments/0d7f6c43c07b18d26148353b6c07f29b8a9adbf5.png)
+- 
