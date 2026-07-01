@@ -24,3 +24,33 @@
 - ![image](.attachments/d6a5db6bdfcd0cce8df9e95501feeb8773454c04.png)
 - ![image](.attachments/81c21360dc9a41d13c6049400aa17764f8bc3073.png)
 
+#### snowflake cli
+
+- ```bash
+  snow git execute @advanced_data_engineering_snowflake/branches/main/module-1/hamburg_weather/pipeline/data/load_tasty_bytes.sql -D "env='STAGING'" --database=COURSE_REPO --schema=PUBLIC
+  ```
+
+  ```bash
+  snow git execute @advanced_data_engineering_snowflake/branches/main/module-1/hamburg_weather/pipeline/objects/ -D "env='STAGING'" --database=COURSE_REPO --sche
+ma=PUBLIC```
+
+- ![image](.attachments/457e609fbdbdae8fa84914adbf7777f5c27dc5f1.png)
+- ![image](.attachments/47d08178e133af7a6f371eb020706ba93852b2b2.png)
+- ![image](.attachments/806af15c547b3e80c40cab7860afced73d42a494.png)
+- ![image](.attachments/5babcb6a6c2ec8d759de1c6decc757fb0c5b6f51.png)
+
+#### database change management (DCM)
+
+- ![image](.attachments/7d873df88f233e4e101dda468c20befc1425a10a.png) 
+- imperative step-by-step changes to database
+- ![image](.attachments/4080c90ff1ab8719ef2bb78a125bf51cfcbde9ba.png)
+- ![image](.attachments/ab5b368d9e17fa6f4cafd7955b374503f6f0aeaf.png)
+- ![image](.attachments/9d33b5872d981c1028352994bb670d91ba8acc2d.png)
+- schemachange/LiquidBase
+
+#### declarative approach with CREATE OR ALTER
+
+- ```sql
+  CREATE OR ALTER
+  ```
+- 
