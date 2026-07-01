@@ -75,4 +75,9 @@ ma=PUBLIC```
   - ![image](.attachments/fad1312b599b850db46878cc39a01d8297d3e29c.png)
   - ![image](.attachments/114cd2bf968fc1a6cc9c49a0e2c24e46ace9373e.png)
   - teams will have different environments (STG and PROD)
-  - ![image](.attachments/ddfb5e0991049ca054e92e47bd03567a428bbf3a.png) 
+  - ![image](.attachments/ddfb5e0991049ca054e92e47bd03567a428bbf3a.png)
+  - ![image](.attachments/b2fc20690dc5a3271e9c29f2163d3db1c4023db2.png)
+  - ![image](.attachments/9c81d78e16c1139579aeae4308b0933e64f79cd8.png)
+  - ![image](.attachments/603a6b44e1b7254f87953c64fc2c506cf442c754.png)
+  - ![image](.attachments/4a1719daf2468d0ceb57647c5e593491279559ab.png)
+  - 
