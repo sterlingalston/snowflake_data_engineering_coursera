@@ -134,4 +134,5 @@ ma=PUBLIC```
 - logs based on description that you write
 - module-2/solutions/solution_sproc_traces.sql
 - record entire journey of request as it moves through system
+- includes timing and dependency
 - 
