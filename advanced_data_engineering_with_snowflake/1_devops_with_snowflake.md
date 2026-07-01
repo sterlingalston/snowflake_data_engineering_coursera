@@ -91,4 +91,6 @@ ma=PUBLIC```
 - ![image](.attachments/6053b3c2fc6dd1ac770299c56d3cf71434788812.png)
 - traces chained together in time series fashion
 - ![image](.attachments/0d7f6c43c07b18d26148353b6c07f29b8a9adbf5.png)
-- 
+- CPU, latency distribution,
+-  ​This is because metrics provide great information ​for identifying system-wide issues. ​Traces provide support in identifying ​which step in a chain is causing the issue. ​And logs provide support for detailed debugging ​and in root cause analyses. ​
+-  
